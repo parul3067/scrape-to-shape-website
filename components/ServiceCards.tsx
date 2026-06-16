@@ -23,7 +23,7 @@ export const SERVICES = [
     ],
   },
   {
-    name: "Basement Finishing",
+    name: "Legal Basements",
     icon: "🏠",
     color: "bg-purple-100",
     bullets: [
@@ -33,13 +33,23 @@ export const SERVICES = [
     ],
   },
   {
-    name: "Full House Renovation",
-    icon: "🔨",
-    color: "bg-green-100",
+    name: "Electrical",
+    icon: "⚡",
+    color: "bg-yellow-100",
     bullets: [
-      "Complete interior overhauls",
-      "Structural & cosmetic",
-      "Managed end-to-end",
+      "ESA Certification",
+      "Panel upgrades & rewiring",
+      "EV charger installation",
+    ],
+  },
+  {
+    name: "Plumbing",
+    icon: "🔧",
+    color: "bg-cyan-100",
+    bullets: [
+      "Plumbing rough-in",
+      "Fixture installation",
+      "Drain & sewer services",
     ],
   },
   {

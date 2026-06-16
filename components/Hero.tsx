@@ -44,13 +44,7 @@ export default function Hero() {
           GTA&apos;s trusted home renovation experts
         </p>
 
-        <p className="text-base sm:text-lg text-white/60 max-w-xl mb-10">
-          Bathrooms, kitchens, basements, roofing, flooring, landscaping — we
-          do it all with craftsmanship you can count on and pricing that&apos;s
-          fully transparent.
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+        <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-10">
           <Link
             href="/contact"
             className="inline-flex items-center justify-center bg-[#C9A84C] hover:bg-[#b8963f] text-white font-semibold text-base px-8 py-4 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"

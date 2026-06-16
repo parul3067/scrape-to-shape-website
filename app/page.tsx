@@ -18,13 +18,12 @@ function TrustSignals() {
   const signals = [
     { icon: "📞", title: "Free Consultation", desc: "No-cost, no-pressure site visit and assessment." },
     { icon: "📋", title: "Fixed-Price Quotes", desc: "No hourly surprises — you know the number before we start." },
-    { icon: "🏗️", title: "7 Services", desc: "Bathrooms to basements, roofing to landscaping — one crew." },
     { icon: "🛡️", title: "Written Warranty", desc: "We stand behind every project with a workmanship warranty." },
   ];
 
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white border-b border-[#1C3A2F]/10">
-      <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8">
         {signals.map((s, i) => (
           <ScrollReveal key={s.title} delay={i * 0.08} className="flex flex-col items-center text-center gap-3">
             <span className="text-3xl">{s.icon}</span>
