@@ -1,148 +1,176 @@
 import Link from "next/link";
 import ScrollReveal from "./ScrollReveal";
+import ScrollDown from "./ScrollDown";
 
 export const SERVICES = [
   {
     name: "Bathroom Renovation",
-    icon: "🚿",
-    color: "bg-blue-100",
     bullets: [
       "Full gut and rebuild",
       "Tile, vanity, fixtures",
       "Custom showers & soaker tubs",
     ],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-6 h-6" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12h18M3 12V8.5A3.5 3.5 0 016.5 5H8M3 12v3.5A2.5 2.5 0 005.5 18h13a2.5 2.5 0 002.5-2.5V12M7 18v2M17 18v2" />
+      </svg>
+    ),
   },
   {
     name: "Kitchen Renovation",
-    icon: "🍳",
-    color: "bg-orange-100",
     bullets: [
       "Cabinetry & countertops",
       "Open-concept conversions",
       "Full electrical & plumbing",
     ],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-6 h-6" aria-hidden="true">
+        <rect x="4" y="4" width="16" height="16" rx="2" strokeWidth={1.5} />
+        <circle cx="9" cy="9" r="2" strokeWidth={1.5} />
+        <circle cx="15" cy="9" r="2" strokeWidth={1.5} />
+        <path d="M8 16h8" strokeWidth={1.5} strokeLinecap="round" />
+      </svg>
+    ),
   },
   {
     name: "Legal Basements",
-    icon: "🏠",
-    color: "bg-purple-100",
     bullets: [
       "Legal suites & rec rooms",
       "Egress windows & permits",
       "Full waterproofing options",
     ],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-6 h-6" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1V10" />
+        <path d="M5 17h14" strokeWidth={1.5} strokeLinecap="round" />
+      </svg>
+    ),
   },
   {
     name: "Electrical",
-    icon: "⚡",
-    color: "bg-yellow-100",
     bullets: [
       "ESA Certification",
       "Panel upgrades & rewiring",
       "EV charger installation",
     ],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-6 h-6" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 3L4 14h8l-1 7 9-11h-8l1-7z" />
+      </svg>
+    ),
   },
   {
     name: "Plumbing",
-    icon: "🔧",
-    color: "bg-cyan-100",
     bullets: [
       "Plumbing rough-in",
       "Fixture installation",
       "Drain & sewer services",
     ],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-6 h-6" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3c0 0-7 7.5-7 12a7 7 0 0014 0c0-4.5-7-12-7-12z" />
+      </svg>
+    ),
   },
   {
     name: "Landscaping & Sodding",
-    icon: "🌿",
-    color: "bg-emerald-100",
     bullets: [
       "Sod installation & grading",
       "Interlock & patios",
       "Drainage solutions",
     ],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-6 h-6" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 2C8 8 6 11 6 14a6 6 0 0012 0c0-3-2-6-6-12z" />
+        <path d="M12 20v2" strokeWidth={1.5} strokeLinecap="round" />
+        <path d="M9 17l-2 2M15 17l2 2" strokeWidth={1.5} strokeLinecap="round" />
+      </svg>
+    ),
   },
   {
     name: "Roofing",
-    icon: "🏗️",
-    color: "bg-red-100",
     bullets: [
       "Shingle replacement",
       "Flat roof systems",
       "Fascia, soffit & eavestroughs",
     ],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-6 h-6" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 10.5L12 3l9 7.5M6 8.5V20a1 1 0 001 1h10a1 1 0 001-1V8.5" />
+      </svg>
+    ),
   },
   {
     name: "Flooring & Tiling",
-    icon: "🪵",
-    color: "bg-amber-100",
     bullets: [
       "Hardwood, LVP, laminate",
       "Porcelain & ceramic tile",
       "Wainscoting & feature walls",
     ],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-6 h-6" aria-hidden="true">
+        <rect x="3" y="3" width="8" height="8" rx="1" strokeWidth={1.5} />
+        <rect x="13" y="3" width="8" height="8" rx="1" strokeWidth={1.5} />
+        <rect x="3" y="13" width="8" height="8" rx="1" strokeWidth={1.5} />
+        <rect x="13" y="13" width="8" height="8" rx="1" strokeWidth={1.5} />
+      </svg>
+    ),
   },
 ];
 
 export default function ServiceCards() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F7F5F0]">
-      <div className="max-w-7xl mx-auto">
-        <ScrollReveal className="text-center mb-14">
-          <p className="text-[#C9A84C] font-semibold text-sm uppercase tracking-widest mb-3">
-            What We Do
-          </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C3A2F] mb-4">
+    <section className="h-[100dvh] relative flex flex-col overflow-hidden py-10 px-4 sm:px-6 lg:px-8 bg-[#F7F5F0]">
+      <div className="max-w-7xl mx-auto w-full flex flex-col">
+        <ScrollReveal className="mb-12 shrink-0">
+          <h2
+            className="font-bold text-[#1C3A2F] leading-tight"
+            style={{ fontSize: "clamp(1.75rem, 4vw, 2.75rem)" }}
+          >
             Full-Service Home Renovations
           </h2>
-          <p className="text-[#2D2D2D]/70 max-w-2xl mx-auto text-lg">
-            From a single bathroom to a full-home overhaul, our crew handles
-            every trade — on time, on budget, and built to last.
-          </p>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 h-[50dvh]" style={{ gridTemplateRows: "repeat(2, 1fr)" }}>
           {SERVICES.map((service, index) => (
-            <ScrollReveal key={service.name} delay={index * 0.07}>
-              <div className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full border border-transparent hover:border-[#C9A84C]/20">
-                {/* Icon placeholder */}
-                <div
-                  className={`${service.color} w-14 h-14 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform duration-300`}
-                  aria-hidden="true"
-                >
-                  {service.icon}
+            <ScrollReveal key={service.name} delay={index * 0.05} className="min-h-0 h-full">
+              <Link
+                href="/services"
+                aria-label={`Learn more about ${service.name}`}
+                className="group flex flex-col gap-4 bg-white border border-[#1C3A2F]/10 rounded-2xl p-6 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 ease-out cursor-pointer h-full"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="shrink-0 text-[#1C3A2F]/50 group-hover:text-[#C9A84C] transition-colors duration-300 w-6 h-6">
+                    {service.icon}
+                  </span>
+                  <h3 className="text-[#1C3A2F] font-bold text-base group-hover:text-[#C9A84C] transition-colors duration-200 leading-snug">
+                    {service.name}
+                  </h3>
                 </div>
-
-                <h3 className="text-[#1C3A2F] font-bold text-lg mb-3 group-hover:text-[#C9A84C] transition-colors duration-200">
-                  {service.name}
-                </h3>
-
-                <ul className="space-y-1.5 flex-1 mb-5">
+                <ul className="space-y-1.5">
                   {service.bullets.map((bullet) => (
-                    <li
-                      key={bullet}
-                      className="flex items-start gap-2 text-sm text-[#2D2D2D]/70"
-                    >
-                      <span className="text-[#C9A84C] mt-0.5 shrink-0">✓</span>
+                    <li key={bullet} className="flex items-start gap-1.5 text-sm text-[#2D2D2D]/55">
+                      <span className="text-[#C9A84C]/60 shrink-0 mt-0.5">—</span>
                       <span>{bullet}</span>
                     </li>
                   ))}
                 </ul>
-
-                <Link
-                  href="/services"
-                  className="mt-auto text-[#1C3A2F] hover:text-[#C9A84C] font-semibold text-sm flex items-center gap-1 group/link transition-colors duration-200"
-                >
-                  Learn More
-                  <span className="group-hover/link:translate-x-1 transition-transform duration-200">
-                    →
-                  </span>
-                </Link>
-              </div>
+              </Link>
             </ScrollReveal>
           ))}
         </div>
+
+        <ScrollReveal className="mt-6 shrink-0">
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 text-[#1C3A2F] hover:text-[#C9A84C] font-semibold text-sm transition-colors duration-200 group"
+          >
+            See all services in detail
+            <span className="group-hover:translate-x-1 transition-transform duration-200">&#8594;</span>
+          </Link>
+        </ScrollReveal>
       </div>
+      <ScrollDown targetId="featured-projects" />
     </section>
   );
 }

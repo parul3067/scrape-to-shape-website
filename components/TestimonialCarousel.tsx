@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import ScrollDown from "./ScrollDown";
 
 const TESTIMONIALS = [
   {
@@ -47,9 +48,9 @@ export default function TestimonialCarousel() {
   }, [paused, current]);
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F7F5F0]">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
+    <section id="testimonials" className="h-[100dvh] relative overflow-hidden flex items-center px-4 sm:px-6 lg:px-8 bg-[#F7F5F0]">
+      <div className="max-w-4xl mx-auto w-full">
+        <div className="text-center mb-8">
           <p className="text-[#C9A84C] font-semibold text-sm uppercase tracking-widest mb-3">
             Happy Clients
           </p>
@@ -74,7 +75,7 @@ export default function TestimonialCarousel() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -40 }}
                 transition={{ duration: 0.4, ease: "easeInOut" }}
-                className="bg-white rounded-2xl shadow-md p-8 sm:p-12"
+                className="bg-white rounded-2xl shadow-md p-6 sm:p-8"
               >
                 {/* Stars */}
                 <div className="flex gap-1 mb-6" aria-label="5 star rating">
@@ -146,6 +147,7 @@ export default function TestimonialCarousel() {
           </div>
         </div>
       </div>
+      <ScrollDown targetId="cta" />
     </section>
   );
 }
