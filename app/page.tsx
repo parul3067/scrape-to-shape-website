@@ -26,12 +26,12 @@ const PROJECTS = [
 
 function FeaturedProjects() {
   return (
-    <section id="featured-projects" className="h-[100dvh] relative overflow-hidden py-10 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="featured-projects" className="h-[90dvh] relative overflow-hidden py-8 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
-        <ScrollReveal className="mb-5">
+        <ScrollReveal className="mb-6">
           <h2
             className="font-bold text-[#1C3A2F] leading-tight"
-            style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)" }}
+            style={{ fontSize: "clamp(2rem, 4.5vw, 3rem)" }}
           >
             Featured Projects
           </h2>
@@ -39,24 +39,24 @@ function FeaturedProjects() {
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <ScrollReveal delay={0.05} className="sm:col-span-2">
-            <ProjectCard project={PROJECTS[0]} height="h-[22dvh]" />
+            <ProjectCard project={PROJECTS[0]} height="h-[26dvh]" />
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <ProjectCard project={PROJECTS[1]} height="h-[22dvh]" />
+            <ProjectCard project={PROJECTS[1]} height="h-[26dvh]" />
           </ScrollReveal>
 
           <ScrollReveal delay={0.12}>
-            <ProjectCard project={PROJECTS[2]} height="h-[18dvh]" />
+            <ProjectCard project={PROJECTS[2]} height="h-[21dvh]" />
           </ScrollReveal>
           <ScrollReveal delay={0.16} className="sm:col-span-2">
-            <ProjectCard project={PROJECTS[3]} height="h-[18dvh]" />
+            <ProjectCard project={PROJECTS[3]} height="h-[21dvh]" />
           </ScrollReveal>
 
           <ScrollReveal delay={0.18} className="sm:col-span-2">
-            <ProjectCard project={PROJECTS[4]} height="h-[15dvh]" />
+            <ProjectCard project={PROJECTS[4]} height="h-[17dvh]" />
           </ScrollReveal>
           <ScrollReveal delay={0.22}>
-            <ProjectCard project={PROJECTS[5]} height="h-[15dvh]" />
+            <ProjectCard project={PROJECTS[5]} height="h-[17dvh]" />
           </ScrollReveal>
         </div>
       </div>

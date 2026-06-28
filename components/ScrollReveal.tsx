@@ -9,6 +9,8 @@ interface ScrollRevealProps {
   delay?: number;
 }
 
+const spring = { type: "spring" as const, stiffness: 100, damping: 20 };
+
 export default function ScrollReveal({
   children,
   className = "",
@@ -17,7 +19,6 @@ export default function ScrollReveal({
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
 
-  // Check prefers-reduced-motion
   const [reducedMotion, setReducedMotion] = useState(false);
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -37,7 +38,7 @@ export default function ScrollReveal({
           ? { opacity: 1, y: 0 }
           : { opacity: 0, y: reducedMotion ? 0 : 24 }
       }
-      transition={{ duration: 0.5, delay, ease: "easeOut" }}
+      transition={{ ...spring, delay }}
     >
       {children}
     </motion.div>

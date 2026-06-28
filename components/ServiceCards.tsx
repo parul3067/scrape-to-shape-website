@@ -120,36 +120,36 @@ export const SERVICES = [
 
 export default function ServiceCards() {
   return (
-    <section className="h-[100dvh] relative flex flex-col overflow-hidden py-10 px-4 sm:px-6 lg:px-8 bg-[#F7F5F0]">
+    <section className="h-[90dvh] relative flex flex-col overflow-hidden py-8 px-4 sm:px-6 lg:px-8 bg-[#F7F5F0]">
       <div className="max-w-7xl mx-auto w-full flex flex-col">
-        <ScrollReveal className="mb-12 shrink-0">
+        <ScrollReveal className="mb-10 shrink-0">
           <h2
             className="font-bold text-[#1C3A2F] leading-tight"
-            style={{ fontSize: "clamp(1.75rem, 4vw, 2.75rem)" }}
+            style={{ fontSize: "clamp(2rem, 4.5vw, 3rem)" }}
           >
             Full-Service Home Renovations
           </h2>
         </ScrollReveal>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 h-[50dvh]" style={{ gridTemplateRows: "repeat(2, 1fr)" }}>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 h-[58dvh]" style={{ gridTemplateRows: "repeat(2, 1fr)" }}>
           {SERVICES.map((service, index) => (
             <ScrollReveal key={service.name} delay={index * 0.05} className="min-h-0 h-full">
               <Link
                 href="/services"
                 aria-label={`Learn more about ${service.name}`}
-                className="group flex flex-col gap-4 bg-white border border-[#1C3A2F]/10 rounded-2xl p-6 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 ease-out cursor-pointer h-full"
+                className="group flex flex-col gap-5 bg-white border border-[#1C3A2F]/10 rounded-2xl p-7 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 ease-out cursor-pointer h-full"
               >
                 <div className="flex items-center gap-3">
-                  <span className="shrink-0 text-[#1C3A2F]/50 group-hover:text-[#C9A84C] transition-colors duration-300 w-6 h-6">
+                  <span className="shrink-0 text-[#1C3A2F]/50 group-hover:text-[#C9A84C] transition-colors duration-300 w-7 h-7">
                     {service.icon}
                   </span>
-                  <h3 className="text-[#1C3A2F] font-bold text-base group-hover:text-[#C9A84C] transition-colors duration-200 leading-snug">
+                  <h3 className="text-[#1C3A2F] font-bold text-lg group-hover:text-[#C9A84C] transition-colors duration-200 leading-snug">
                     {service.name}
                   </h3>
                 </div>
-                <ul className="space-y-1.5">
+                <ul className="space-y-2">
                   {service.bullets.map((bullet) => (
-                    <li key={bullet} className="flex items-start gap-1.5 text-sm text-[#2D2D2D]/55">
+                    <li key={bullet} className="flex items-start gap-2 text-sm text-[#2D2D2D]/60">
                       <span className="text-[#C9A84C]/60 shrink-0 mt-0.5">—</span>
                       <span>{bullet}</span>
                     </li>
