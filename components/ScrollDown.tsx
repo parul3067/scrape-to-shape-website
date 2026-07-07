@@ -18,7 +18,7 @@ export default function ScrollDown({
         className={`${
           light
             ? "text-white/30 hover:text-white/60"
-            : "text-[#1C3A2F]/25 hover:text-[#C9A84C]"
+            : "text-[#1A1A1A]/25 hover:text-[#C9A84C]"
         } transition-colors duration-200`}
       >
         <motion.div

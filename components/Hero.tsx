@@ -22,7 +22,7 @@ export default function Hero() {
       />
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-[#0d1f17]/65" />
+      <div className="absolute inset-0 bg-[#0D0D0D]/65" />
 
       {/* Grain texture */}
       <div

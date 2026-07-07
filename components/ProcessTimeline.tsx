@@ -66,7 +66,7 @@ export const STEPS = [
 
 export default function ProcessTimeline() {
   return (
-    <section className="h-[80dvh] relative flex flex-col overflow-hidden py-8 px-4 sm:px-6 lg:px-8 bg-[#1C3A2F]">
+    <section className="h-[80dvh] relative flex flex-col overflow-hidden py-8 px-4 sm:px-6 lg:px-8 bg-[#1A1A1A]">
       <div className="max-w-7xl mx-auto w-full flex flex-col">
         <ScrollReveal className="mb-8 shrink-0">
           <h2

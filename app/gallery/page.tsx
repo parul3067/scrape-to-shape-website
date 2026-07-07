@@ -80,7 +80,7 @@ function GalleryCard({ item }: { item: GalleryItem }) {
             <span className="text-xs font-semibold uppercase tracking-wider text-[#C9A84C]">
               {item.category}
             </span>
-            <h3 className="font-bold text-[#1C3A2F] text-base mt-0.5">
+            <h3 className="font-bold text-[#1A1A1A] text-base mt-0.5">
               {item.label}
             </h3>
             <p className="text-[#2D2D2D]/50 text-xs mt-0.5">{item.location}</p>
@@ -90,7 +90,7 @@ function GalleryCard({ item }: { item: GalleryItem }) {
         {/* Before/After toggle */}
         <button
           onClick={() => setShowAfter((prev) => !prev)}
-          className="mt-3 text-xs font-semibold text-[#1C3A2F] hover:text-[#C9A84C] transition-colors duration-200 flex items-center gap-1"
+          className="mt-3 text-xs font-semibold text-[#1A1A1A] hover:text-[#C9A84C] transition-colors duration-200 flex items-center gap-1"
         >
           <span className="w-4 h-4 rounded-full border-2 border-current flex items-center justify-center text-[8px]">
             ↔
@@ -113,7 +113,7 @@ export default function GalleryPage() {
   return (
     <div className="pt-16 min-h-screen bg-[#F7F5F0]">
       {/* Page header */}
-      <section className="bg-[#1C3A2F] py-20 px-4 sm:px-6 lg:px-8">
+      <section className="bg-[#1A1A1A] py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-[#C9A84C] font-semibold text-sm uppercase tracking-widest mb-3">
             Project Gallery
@@ -129,7 +129,7 @@ export default function GalleryPage() {
       </section>
 
       {/* Filter bar */}
-      <div className="sticky top-16 z-30 bg-white/90 backdrop-blur-md border-b border-[#1C3A2F]/10 px-4 sm:px-6 lg:px-8 py-4">
+      <div className="sticky top-16 z-30 bg-white/90 backdrop-blur-md border-b border-[#1A1A1A]/10 px-4 sm:px-6 lg:px-8 py-4">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-wrap gap-2">
             {CATEGORIES.map((cat) => (
@@ -138,8 +138,8 @@ export default function GalleryPage() {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                   activeCategory === cat
-                    ? "bg-[#1C3A2F] text-white shadow-md"
-                    : "bg-[#F7F5F0] text-[#2D2D2D] hover:bg-[#1C3A2F]/10"
+                    ? "bg-[#1A1A1A] text-white shadow-md"
+                    : "bg-[#F7F5F0] text-[#2D2D2D] hover:bg-[#1A1A1A]/10"
                 }`}
               >
                 {cat}

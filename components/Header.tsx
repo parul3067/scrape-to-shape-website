@@ -33,8 +33,8 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled || !isHome
-          ? "bg-[#1C3A2F] shadow-lg"
-          : "bg-[#1C3A2F]/0"
+          ? "bg-[#1A1A1A] shadow-lg"
+          : "bg-[#1A1A1A]/0"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -94,7 +94,7 @@ export default function Header() {
 
       {/* Mobile drawer */}
       {menuOpen && (
-        <div className="lg:hidden bg-[#1C3A2F] border-t border-white/10 px-4 pb-6 pt-2">
+        <div className="lg:hidden bg-[#1A1A1A] border-t border-white/10 px-4 pb-6 pt-2">
           <nav className="flex flex-col gap-1">
             {NAV_LINKS.map((link) => (
               <Link

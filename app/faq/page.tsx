@@ -81,7 +81,7 @@ export default function FaqPage() {
   return (
     <div className="pt-16">
       {/* Page header */}
-      <section className="bg-[#1C3A2F] py-20 px-4 sm:px-6 lg:px-8">
+      <section className="bg-[#1A1A1A] py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-[#C9A84C] font-semibold text-sm uppercase tracking-widest mb-3">
             Common Questions
@@ -109,7 +109,7 @@ export default function FaqPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-3xl mx-auto text-center">
           <ScrollReveal>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#1C3A2F] mb-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#1A1A1A] mb-4">
               Don&apos;t See Your Question?
             </h2>
             <p className="text-[#2D2D2D]/60 mb-8">
@@ -120,13 +120,13 @@ export default function FaqPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:2268991190"
-                className="inline-flex items-center justify-center bg-[#1C3A2F] hover:bg-[#2a5243] text-white font-semibold px-8 py-4 rounded-full transition-all duration-200"
+                className="inline-flex items-center justify-center bg-[#1A1A1A] hover:bg-[#2A2A2A] text-white font-semibold px-8 py-4 rounded-full transition-all duration-200"
               >
                 Call 226-899-1190
               </a>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center border-2 border-[#1C3A2F] hover:bg-[#1C3A2F] hover:text-white text-[#1C3A2F] font-semibold px-8 py-4 rounded-full transition-all duration-200"
+                className="inline-flex items-center justify-center border-2 border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white text-[#1A1A1A] font-semibold px-8 py-4 rounded-full transition-all duration-200"
               >
                 Send a Message
               </Link>

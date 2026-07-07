@@ -73,7 +73,7 @@ export default function KnowYourHousePage() {
   return (
     <div className="pt-16">
       {/* Page header */}
-      <section className="bg-[#1C3A2F] py-20 px-4 sm:px-6 lg:px-8">
+      <section className="bg-[#1A1A1A] py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-[#C9A84C] font-semibold text-sm uppercase tracking-widest mb-3">
             Homeowner Education
@@ -95,7 +95,7 @@ export default function KnowYourHousePage() {
             <aside className="lg:col-span-1">
               <ScrollReveal>
                 <div className="bg-white rounded-2xl p-6 shadow-sm sticky top-24">
-                  <h2 className="font-bold text-[#1C3A2F] text-base mb-4">
+                  <h2 className="font-bold text-[#1A1A1A] text-base mb-4">
                     Topics
                   </h2>
                   <ul className="space-y-2">
@@ -111,13 +111,13 @@ export default function KnowYourHousePage() {
                     ))}
                   </ul>
 
-                  <div className="mt-8 pt-6 border-t border-[#1C3A2F]/10">
+                  <div className="mt-8 pt-6 border-t border-[#1A1A1A]/10">
                     <p className="text-sm text-[#2D2D2D]/60 mb-3">
                       Have a question not covered here?
                     </p>
                     <Link
                       href="/contact"
-                      className="block text-center bg-[#1C3A2F] hover:bg-[#2a5243] text-white text-sm font-semibold py-3 px-4 rounded-full transition-colors duration-200"
+                      className="block text-center bg-[#1A1A1A] hover:bg-[#2A2A2A] text-white text-sm font-semibold py-3 px-4 rounded-full transition-colors duration-200"
                     >
                       Ask Us Directly
                     </Link>
@@ -145,7 +145,7 @@ export default function KnowYourHousePage() {
                           </span>
                         </div>
 
-                        <h2 className="text-xl font-bold text-[#1C3A2F] mb-3 leading-snug">
+                        <h2 className="text-xl font-bold text-[#1A1A1A] mb-3 leading-snug">
                           {article.title}
                         </h2>
 
@@ -154,7 +154,7 @@ export default function KnowYourHousePage() {
                         </p>
 
                         {/* Placeholder link — full article pages to be added */}
-                        <span className="inline-flex items-center gap-1 text-[#1C3A2F] hover:text-[#C9A84C] font-semibold text-sm transition-colors duration-200 cursor-pointer">
+                        <span className="inline-flex items-center gap-1 text-[#1A1A1A] hover:text-[#C9A84C] font-semibold text-sm transition-colors duration-200 cursor-pointer">
                           Read article
                           <span>→</span>
                         </span>
@@ -166,9 +166,9 @@ export default function KnowYourHousePage() {
 
               {/* More coming soon */}
               <ScrollReveal>
-                <div className="bg-white border-2 border-dashed border-[#1C3A2F]/20 rounded-2xl p-8 text-center">
+                <div className="bg-white border-2 border-dashed border-[#1A1A1A]/20 rounded-2xl p-8 text-center">
                   <span className="text-3xl block mb-3">✍️</span>
-                  <h3 className="font-bold text-[#1C3A2F] text-lg mb-2">
+                  <h3 className="font-bold text-[#1A1A1A] text-lg mb-2">
                     More Articles Coming Soon
                   </h3>
                   <p className="text-[#2D2D2D]/50 text-sm">

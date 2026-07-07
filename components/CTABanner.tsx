@@ -10,7 +10,7 @@ export default function CTABanner({
   sub = "Get a free, no-obligation quote from the GTA's most trusted renovation crew.",
 }: CTABannerProps) {
   return (
-    <section id="cta" className="h-[100dvh] relative overflow-hidden bg-[#1C3A2F] flex items-center px-4 sm:px-6 lg:px-8">
+    <section id="cta" className="h-[100dvh] relative overflow-hidden bg-[#1A1A1A] flex items-center px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <p className="text-[#C9A84C] font-semibold text-xs uppercase tracking-[0.25em] mb-4">
           Let&apos;s Build Something

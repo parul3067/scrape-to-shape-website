@@ -5,6 +5,7 @@ import ScrollDown from "./ScrollDown";
 export const SERVICES = [
   {
     name: "Bathroom Renovation",
+    href: "/services#bathroom-renovation",
     bullets: [
       "Full gut and rebuild",
       "Tile, vanity, fixtures",
@@ -18,6 +19,7 @@ export const SERVICES = [
   },
   {
     name: "Kitchen Renovation",
+    href: "/services#kitchen-renovation",
     bullets: [
       "Cabinetry & countertops",
       "Open-concept conversions",
@@ -34,6 +36,7 @@ export const SERVICES = [
   },
   {
     name: "Legal Basements",
+    href: "/services#basement-finishing",
     bullets: [
       "Legal suites & rec rooms",
       "Egress windows & permits",
@@ -48,6 +51,7 @@ export const SERVICES = [
   },
   {
     name: "Electrical",
+    href: "/services",
     bullets: [
       "ESA Certification",
       "Panel upgrades & rewiring",
@@ -61,6 +65,7 @@ export const SERVICES = [
   },
   {
     name: "Plumbing",
+    href: "/services",
     bullets: [
       "Plumbing rough-in",
       "Fixture installation",
@@ -74,6 +79,7 @@ export const SERVICES = [
   },
   {
     name: "Landscaping & Sodding",
+    href: "/services#landscaping-&-sodding",
     bullets: [
       "Sod installation & grading",
       "Interlock & patios",
@@ -89,6 +95,7 @@ export const SERVICES = [
   },
   {
     name: "Roofing",
+    href: "/services#roofing",
     bullets: [
       "Shingle replacement",
       "Flat roof systems",
@@ -102,6 +109,7 @@ export const SERVICES = [
   },
   {
     name: "Flooring & Tiling",
+    href: "/services#flooring-&-tiling",
     bullets: [
       "Hardwood, LVP, laminate",
       "Porcelain & ceramic tile",
@@ -120,11 +128,11 @@ export const SERVICES = [
 
 export default function ServiceCards() {
   return (
-    <section className="h-[90dvh] relative flex flex-col overflow-hidden py-8 px-4 sm:px-6 lg:px-8 bg-[#F7F5F0]">
+    <section className="h-[90dvh] relative flex flex-col overflow-hidden py-8 px-4 sm:px-6 lg:px-8 bg-[#1A1A1A]">
       <div className="max-w-7xl mx-auto w-full flex flex-col">
-        <ScrollReveal className="mb-10 shrink-0">
+        <ScrollReveal className="mb-8 shrink-0">
           <h2
-            className="font-bold text-[#1C3A2F] leading-tight"
+            className="font-bold text-white leading-tight"
             style={{ fontSize: "clamp(2rem, 4.5vw, 3rem)" }}
           >
             Full-Service Home Renovations
@@ -133,28 +141,33 @@ export default function ServiceCards() {
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 h-[58dvh]" style={{ gridTemplateRows: "repeat(2, 1fr)" }}>
           {SERVICES.map((service, index) => (
-            <ScrollReveal key={service.name} delay={index * 0.05} className="min-h-0 h-full">
+            <ScrollReveal key={service.name} delay={index * 0.07} className="min-h-0 h-full">
               <Link
-                href="/services"
+                href={service.href}
                 aria-label={`Learn more about ${service.name}`}
-                className="group flex flex-col gap-5 bg-white border border-[#1C3A2F]/10 rounded-2xl p-7 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 ease-out cursor-pointer h-full"
+                className="group flex flex-col gap-4 h-full rounded-2xl border border-white/10 bg-white/[0.06] hover:bg-white/[0.11] p-7 transition-all duration-300 ease-out cursor-pointer"
               >
-                <div className="flex items-center gap-3">
-                  <span className="shrink-0 text-[#1C3A2F]/50 group-hover:text-[#C9A84C] transition-colors duration-300 w-7 h-7">
-                    {service.icon}
+                <div className="flex items-center justify-between">
+                  <span className="text-[#C9A84C]">{service.icon}</span>
+                  <span className="text-[#C9A84C]/40 font-mono text-xs font-semibold tracking-widest">
+                    {String(index + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="text-[#1C3A2F] font-bold text-lg group-hover:text-[#C9A84C] transition-colors duration-200 leading-snug">
+                </div>
+                <div className="flex flex-col gap-2 flex-1">
+                  <h3 className="text-white font-bold text-lg leading-snug group-hover:text-[#C9A84C] transition-colors duration-200">
                     {service.name}
                   </h3>
+                  <ul className="space-y-1.5">
+                    {service.bullets.map((bullet) => (
+                      <li key={bullet} className="flex items-start gap-2 text-sm text-white/50">
+                        <svg viewBox="0 0 6 6" className="w-1.5 h-1.5 shrink-0 mt-[5px] text-[#C9A84C]/50" fill="currentColor" aria-hidden="true">
+                          <circle cx="3" cy="3" r="3" />
+                        </svg>
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul className="space-y-2">
-                  {service.bullets.map((bullet) => (
-                    <li key={bullet} className="flex items-start gap-2 text-sm text-[#2D2D2D]/60">
-                      <span className="text-[#C9A84C]/60 shrink-0 mt-0.5">—</span>
-                      <span>{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
               </Link>
             </ScrollReveal>
           ))}
@@ -163,14 +176,14 @@ export default function ServiceCards() {
         <ScrollReveal className="mt-6 shrink-0">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 text-[#1C3A2F] hover:text-[#C9A84C] font-semibold text-sm transition-colors duration-200 group"
+            className="inline-flex items-center gap-2 text-white/50 hover:text-[#C9A84C] font-semibold text-sm transition-colors duration-200 group"
           >
             See all services in detail
             <span className="group-hover:translate-x-1 transition-transform duration-200">&#8594;</span>
           </Link>
         </ScrollReveal>
       </div>
-      <ScrollDown targetId="featured-projects" />
+      <ScrollDown targetId="featured-projects" light />
     </section>
   );
 }

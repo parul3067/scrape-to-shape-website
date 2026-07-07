@@ -87,7 +87,7 @@ export default function ContactPage() {
   return (
     <div className="pt-16">
       {/* Page header */}
-      <section className="bg-[#1C3A2F] py-20 px-4 sm:px-6 lg:px-8">
+      <section className="bg-[#1A1A1A] py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-[#C9A84C] font-semibold text-sm uppercase tracking-widest mb-3">
             Get In Touch
@@ -107,7 +107,7 @@ export default function ContactPage() {
           {/* Contact info */}
           <aside className="lg:col-span-2">
             <ScrollReveal>
-              <h2 className="text-2xl font-bold text-[#1C3A2F] mb-6">
+              <h2 className="text-2xl font-bold text-[#1A1A1A] mb-6">
                 Reach Us Directly
               </h2>
 
@@ -116,14 +116,14 @@ export default function ContactPage() {
                   href="tel:2268991190"
                   className="flex items-start gap-4 group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[#1C3A2F] flex items-center justify-center text-white text-xl shrink-0 group-hover:bg-[#C9A84C] transition-colors duration-200">
+                  <div className="w-12 h-12 rounded-xl bg-[#1A1A1A] flex items-center justify-center text-white text-xl shrink-0 group-hover:bg-[#C9A84C] transition-colors duration-200">
                     📞
                   </div>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wider text-[#2D2D2D]/50 mb-0.5">
                       Phone
                     </p>
-                    <p className="font-bold text-[#1C3A2F] group-hover:text-[#C9A84C] transition-colors duration-200">
+                    <p className="font-bold text-[#1A1A1A] group-hover:text-[#C9A84C] transition-colors duration-200">
                       226-899-1190
                     </p>
                     <p className="text-xs text-[#2D2D2D]/50">
@@ -136,14 +136,14 @@ export default function ContactPage() {
                   href="mailto:info@scrapetoshape.ca"
                   className="flex items-start gap-4 group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[#1C3A2F] flex items-center justify-center text-white text-xl shrink-0 group-hover:bg-[#C9A84C] transition-colors duration-200">
+                  <div className="w-12 h-12 rounded-xl bg-[#1A1A1A] flex items-center justify-center text-white text-xl shrink-0 group-hover:bg-[#C9A84C] transition-colors duration-200">
                     ✉️
                   </div>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wider text-[#2D2D2D]/50 mb-0.5">
                       Email
                     </p>
-                    <p className="font-bold text-[#1C3A2F] group-hover:text-[#C9A84C] transition-colors duration-200">
+                    <p className="font-bold text-[#1A1A1A] group-hover:text-[#C9A84C] transition-colors duration-200">
                       info@scrapetoshape.ca
                     </p>
                     <p className="text-xs text-[#2D2D2D]/50">
@@ -153,14 +153,14 @@ export default function ContactPage() {
                 </a>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-[#1C3A2F] flex items-center justify-center text-white text-xl shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-[#1A1A1A] flex items-center justify-center text-white text-xl shrink-0">
                     📍
                   </div>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wider text-[#2D2D2D]/50 mb-0.5">
                       Service Area
                     </p>
-                    <p className="font-bold text-[#1C3A2F]">
+                    <p className="font-bold text-[#1A1A1A]">
                       Greater Toronto Area, ON
                     </p>
                     <p className="text-xs text-[#2D2D2D]/50 mt-1 leading-relaxed">
@@ -170,7 +170,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="bg-[#1C3A2F] rounded-2xl p-6 text-white">
+              <div className="bg-[#1A1A1A] rounded-2xl p-6 text-white">
                 <h3 className="font-bold text-base mb-3">
                   What Happens After You Contact Us?
                 </h3>
@@ -182,7 +182,7 @@ export default function ContactPage() {
                     "No pressure — take as much time as you need",
                   ].map((step, i) => (
                     <li key={step} className="flex items-start gap-3 text-sm text-white/70">
-                      <span className="w-5 h-5 rounded-full bg-[#C9A84C] text-[#1C3A2F] text-[11px] font-bold flex items-center justify-center shrink-0 mt-0.5">
+                      <span className="w-5 h-5 rounded-full bg-[#C9A84C] text-[#1A1A1A] text-[11px] font-bold flex items-center justify-center shrink-0 mt-0.5">
                         {i + 1}
                       </span>
                       <span>{step}</span>
@@ -199,10 +199,10 @@ export default function ContactPage() {
               <div className="bg-white rounded-2xl shadow-md p-8 sm:p-10">
                 {submitted ? (
                   <div className="flex flex-col items-center text-center py-12">
-                    <div className="w-20 h-20 rounded-full bg-[#1C3A2F] flex items-center justify-center text-4xl mb-6">
+                    <div className="w-20 h-20 rounded-full bg-[#1A1A1A] flex items-center justify-center text-4xl mb-6">
                       ✅
                     </div>
-                    <h2 className="text-2xl font-bold text-[#1C3A2F] mb-3">
+                    <h2 className="text-2xl font-bold text-[#1A1A1A] mb-3">
                       Thank You!
                     </h2>
                     <p className="text-[#2D2D2D]/60 max-w-sm leading-relaxed mb-6">
@@ -220,14 +220,14 @@ export default function ContactPage() {
                     </p>
                     <button
                       onClick={() => setSubmitted(false)}
-                      className="mt-8 text-sm text-[#1C3A2F] hover:text-[#C9A84C] font-medium underline transition-colors duration-200"
+                      className="mt-8 text-sm text-[#1A1A1A] hover:text-[#C9A84C] font-medium underline transition-colors duration-200"
                     >
                       Submit another inquiry
                     </button>
                   </div>
                 ) : (
                   <>
-                    <h2 className="text-2xl font-bold text-[#1C3A2F] mb-2">
+                    <h2 className="text-2xl font-bold text-[#1A1A1A] mb-2">
                       Request a Free Consultation
                     </h2>
                     <p className="text-[#2D2D2D]/50 text-sm mb-8">
@@ -252,10 +252,10 @@ export default function ContactPage() {
                             value={form.name}
                             onChange={handleChange}
                             placeholder="Jane Smith"
-                            className={`w-full rounded-xl border px-4 py-3 text-sm text-[#2D2D2D] bg-[#F7F5F0] focus:outline-none focus:ring-2 focus:ring-[#1C3A2F] transition-all duration-200 ${
+                            className={`w-full rounded-xl border px-4 py-3 text-sm text-[#2D2D2D] bg-[#F7F5F0] focus:outline-none focus:ring-2 focus:ring-[#1A1A1A] transition-all duration-200 ${
                               errors.name
                                 ? "border-red-400"
-                                : "border-[#1C3A2F]/20"
+                                : "border-[#1A1A1A]/20"
                             }`}
                           />
                           {errors.name && (
@@ -279,10 +279,10 @@ export default function ContactPage() {
                             value={form.email}
                             onChange={handleChange}
                             placeholder="jane@example.com"
-                            className={`w-full rounded-xl border px-4 py-3 text-sm text-[#2D2D2D] bg-[#F7F5F0] focus:outline-none focus:ring-2 focus:ring-[#1C3A2F] transition-all duration-200 ${
+                            className={`w-full rounded-xl border px-4 py-3 text-sm text-[#2D2D2D] bg-[#F7F5F0] focus:outline-none focus:ring-2 focus:ring-[#1A1A1A] transition-all duration-200 ${
                               errors.email
                                 ? "border-red-400"
-                                : "border-[#1C3A2F]/20"
+                                : "border-[#1A1A1A]/20"
                             }`}
                           />
                           {errors.email && (
@@ -309,7 +309,7 @@ export default function ContactPage() {
                             value={form.phone}
                             onChange={handleChange}
                             placeholder="416-555-0100"
-                            className="w-full rounded-xl border border-[#1C3A2F]/20 px-4 py-3 text-sm text-[#2D2D2D] bg-[#F7F5F0] focus:outline-none focus:ring-2 focus:ring-[#1C3A2F] transition-all duration-200"
+                            className="w-full rounded-xl border border-[#1A1A1A]/20 px-4 py-3 text-sm text-[#2D2D2D] bg-[#F7F5F0] focus:outline-none focus:ring-2 focus:ring-[#1A1A1A] transition-all duration-200"
                           />
                         </div>
 
@@ -325,7 +325,7 @@ export default function ContactPage() {
                             name="city"
                             value={form.city}
                             onChange={handleChange}
-                            className="w-full rounded-xl border border-[#1C3A2F]/20 px-4 py-3 text-sm text-[#2D2D2D] bg-[#F7F5F0] focus:outline-none focus:ring-2 focus:ring-[#1C3A2F] transition-all duration-200"
+                            className="w-full rounded-xl border border-[#1A1A1A]/20 px-4 py-3 text-sm text-[#2D2D2D] bg-[#F7F5F0] focus:outline-none focus:ring-2 focus:ring-[#1A1A1A] transition-all duration-200"
                           >
                             <option value="">Select a city…</option>
                             {GTA_CITIES.map((city) => (
@@ -351,7 +351,7 @@ export default function ContactPage() {
                           name="service"
                           value={form.service}
                           onChange={handleChange}
-                          className="w-full rounded-xl border border-[#1C3A2F]/20 px-4 py-3 text-sm text-[#2D2D2D] bg-[#F7F5F0] focus:outline-none focus:ring-2 focus:ring-[#1C3A2F] transition-all duration-200"
+                          className="w-full rounded-xl border border-[#1A1A1A]/20 px-4 py-3 text-sm text-[#2D2D2D] bg-[#F7F5F0] focus:outline-none focus:ring-2 focus:ring-[#1A1A1A] transition-all duration-200"
                         >
                           <option value="">Select a service…</option>
                           {SERVICES.map((s) => (
@@ -378,10 +378,10 @@ export default function ContactPage() {
                           value={form.message}
                           onChange={handleChange}
                           placeholder="Describe what you're looking to do — rough timeline, scope, any specific questions…"
-                          className={`w-full rounded-xl border px-4 py-3 text-sm text-[#2D2D2D] bg-[#F7F5F0] focus:outline-none focus:ring-2 focus:ring-[#1C3A2F] transition-all duration-200 resize-none ${
+                          className={`w-full rounded-xl border px-4 py-3 text-sm text-[#2D2D2D] bg-[#F7F5F0] focus:outline-none focus:ring-2 focus:ring-[#1A1A1A] transition-all duration-200 resize-none ${
                             errors.message
                               ? "border-red-400"
-                              : "border-[#1C3A2F]/20"
+                              : "border-[#1A1A1A]/20"
                           }`}
                         />
                         {errors.message && (

@@ -30,7 +30,7 @@ function FeaturedProjects() {
       <div className="max-w-7xl mx-auto">
         <ScrollReveal className="mb-6">
           <h2
-            className="font-bold text-[#1C3A2F] leading-tight"
+            className="font-bold text-[#1A1A1A] leading-tight"
             style={{ fontSize: "clamp(2rem, 4.5vw, 3rem)" }}
           >
             Featured Projects

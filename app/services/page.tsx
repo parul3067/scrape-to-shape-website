@@ -149,7 +149,7 @@ export default function ServicesPage() {
   return (
     <div className="pt-16">
       {/* Page header */}
-      <section className="bg-[#1C3A2F] py-20 px-4 sm:px-6 lg:px-8">
+      <section className="bg-[#1A1A1A] py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-[#C9A84C] font-semibold text-sm uppercase tracking-widest mb-3">
             What We Offer
@@ -170,7 +170,7 @@ export default function ServicesPage() {
           <section
             key={service.name}
             id={service.name.toLowerCase().replace(/\s+/g, "-")}
-            className={`py-20 px-4 sm:px-6 lg:px-8 ${
+            className={`py-20 px-4 sm:px-6 lg:px-8 scroll-mt-20 lg:scroll-mt-24 ${
               index % 2 === 0 ? "bg-[#F7F5F0]" : "bg-white"
             }`}
           >
@@ -186,7 +186,7 @@ export default function ServicesPage() {
                     className={`bg-gradient-to-br ${service.color} rounded-3xl h-64 lg:h-80 flex flex-col items-center justify-center gap-4`}
                   >
                     <span className="text-7xl">{service.icon}</span>
-                    <span className="text-[#1C3A2F] font-semibold text-lg">
+                    <span className="text-[#1A1A1A] font-semibold text-lg">
                       {service.name}
                     </span>
                   </div>
@@ -197,7 +197,7 @@ export default function ServicesPage() {
                   <p className="text-[#C9A84C] font-semibold text-sm uppercase tracking-widest mb-2">
                     Service {index + 1} of {SERVICES.length}
                   </p>
-                  <h2 className="text-3xl sm:text-4xl font-bold text-[#1C3A2F] mb-2">
+                  <h2 className="text-3xl sm:text-4xl font-bold text-[#1A1A1A] mb-2">
                     {service.name}
                   </h2>
                   <p className="text-lg text-[#C9A84C] italic mb-4">
@@ -229,7 +229,7 @@ export default function ServicesPage() {
 
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center bg-[#1C3A2F] hover:bg-[#2a5243] text-white font-semibold px-6 py-3 rounded-full transition-all duration-200"
+                    className="inline-flex items-center justify-center bg-[#1A1A1A] hover:bg-[#2A2A2A] text-white font-semibold px-6 py-3 rounded-full transition-all duration-200"
                   >
                     Get a Quote for {service.name} →
                   </Link>

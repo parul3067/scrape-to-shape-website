@@ -73,7 +73,7 @@ export default function AboutPage() {
   return (
     <div className="pt-16">
       {/* Page header */}
-      <section className="bg-[#1C3A2F] py-20 px-4 sm:px-6 lg:px-8">
+      <section className="bg-[#1A1A1A] py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-[#C9A84C] font-semibold text-sm uppercase tracking-widest mb-3">
             Who We Are
@@ -93,7 +93,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
           {/* Story visual */}
           <ScrollReveal>
-            <div className="bg-gradient-to-br from-[#1C3A2F] to-[#2a5243] rounded-3xl p-10 flex flex-col gap-8">
+            <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2A2A2A] rounded-3xl p-10 flex flex-col gap-8">
               <div className="text-[#C9A84C] font-bold text-5xl leading-none">&ldquo;</div>
               <p className="text-white/90 text-lg leading-relaxed italic">
                 I&apos;ve seen too many homeowners get burned by contractors who
@@ -115,7 +115,7 @@ export default function AboutPage() {
             <p className="text-[#C9A84C] font-semibold text-sm uppercase tracking-widest mb-3">
               Our Story
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#1C3A2F] mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#1A1A1A] mb-6">
               Built from the Ground Up
             </h2>
             <div className="space-y-4 text-[#2D2D2D]/70 leading-relaxed">
@@ -154,7 +154,7 @@ export default function AboutPage() {
                 { num: "10+", label: "GTA cities served" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <div className="text-3xl font-bold text-[#1C3A2F]">
+                  <div className="text-3xl font-bold text-[#1A1A1A]">
                     {stat.num}
                   </div>
                   <div className="text-xs text-[#2D2D2D]/50 mt-1">
@@ -174,7 +174,7 @@ export default function AboutPage() {
             <p className="text-[#C9A84C] font-semibold text-sm uppercase tracking-widest mb-3">
               What Drives Us
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#1C3A2F]">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#1A1A1A]">
               Our Core Values
             </h2>
           </ScrollReveal>
@@ -184,7 +184,7 @@ export default function AboutPage() {
               <ScrollReveal key={value.title} delay={i * 0.07}>
                 <div className="bg-[#F7F5F0] rounded-2xl p-7 h-full">
                   <span className="text-3xl block mb-4">{value.icon}</span>
-                  <h3 className="font-bold text-[#1C3A2F] text-lg mb-2">
+                  <h3 className="font-bold text-[#1A1A1A] text-lg mb-2">
                     {value.title}
                   </h3>
                   <p className="text-[#2D2D2D]/60 text-sm leading-relaxed">
@@ -204,7 +204,7 @@ export default function AboutPage() {
             <p className="text-[#C9A84C] font-semibold text-sm uppercase tracking-widest mb-3">
               The Crew
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#1C3A2F]">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#1A1A1A]">
               The People Behind the Work
             </h2>
           </ScrollReveal>
@@ -214,10 +214,10 @@ export default function AboutPage() {
               <ScrollReveal key={member.name} delay={i * 0.07}>
                 <div className="bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-sm">
                   {/* Avatar placeholder */}
-                  <div className="w-20 h-20 rounded-full bg-[#1C3A2F] flex items-center justify-center text-white font-bold text-2xl mb-4">
+                  <div className="w-20 h-20 rounded-full bg-[#1A1A1A] flex items-center justify-center text-white font-bold text-2xl mb-4">
                     {member.initials}
                   </div>
-                  <h3 className="font-bold text-[#1C3A2F] text-lg">
+                  <h3 className="font-bold text-[#1A1A1A] text-lg">
                     {member.name}
                   </h3>
                   <p className="text-[#C9A84C] text-sm font-medium mb-3">
@@ -237,7 +237,7 @@ export default function AboutPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#1C3A2F] mb-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#1A1A1A] mb-4">
               Proudly Serving the GTA
             </h2>
             <p className="text-[#2D2D2D]/60 mb-8">
@@ -259,7 +259,7 @@ export default function AboutPage() {
               ].map((city) => (
                 <span
                   key={city}
-                  className="bg-[#1C3A2F]/5 text-[#1C3A2F] px-4 py-2 rounded-full text-sm font-medium border border-[#1C3A2F]/10"
+                  className="bg-[#1A1A1A]/5 text-[#1A1A1A] px-4 py-2 rounded-full text-sm font-medium border border-[#1A1A1A]/10"
                 >
                   {city}
                 </span>
@@ -268,7 +268,7 @@ export default function AboutPage() {
             <div className="mt-8">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center bg-[#1C3A2F] hover:bg-[#2a5243] text-white font-semibold px-8 py-4 rounded-full transition-all duration-200"
+                className="inline-flex items-center justify-center bg-[#1A1A1A] hover:bg-[#2A2A2A] text-white font-semibold px-8 py-4 rounded-full transition-all duration-200"
               >
                 Check If We Serve Your Area →
               </Link>

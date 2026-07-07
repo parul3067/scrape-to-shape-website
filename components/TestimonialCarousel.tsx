@@ -54,7 +54,7 @@ export default function TestimonialCarousel() {
           <p className="text-[#C9A84C] font-semibold text-sm uppercase tracking-widest mb-3">
             Happy Clients
           </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C3A2F]">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#1A1A1A]">
             What Our Customers Say
           </h2>
         </div>
@@ -92,11 +92,11 @@ export default function TestimonialCarousel() {
 
                 <div className="flex items-center gap-4">
                   {/* Avatar placeholder */}
-                  <div className="w-12 h-12 rounded-full bg-[#1C3A2F] flex items-center justify-center text-white font-bold text-lg shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-[#1A1A1A] flex items-center justify-center text-white font-bold text-lg shrink-0">
                     {TESTIMONIALS[current].name.charAt(0)}
                   </div>
                   <div>
-                    <p className="font-bold text-[#1C3A2F]">
+                    <p className="font-bold text-[#1A1A1A]">
                       {TESTIMONIALS[current].name}
                     </p>
                     <p className="text-sm text-[#2D2D2D]/60">
@@ -114,7 +114,7 @@ export default function TestimonialCarousel() {
             <button
               onClick={prev}
               aria-label="Previous testimonial"
-              className="w-10 h-10 rounded-full border border-[#1C3A2F]/20 hover:border-[#C9A84C] hover:bg-[#C9A84C] hover:text-white flex items-center justify-center text-[#1C3A2F] transition-all duration-200"
+              className="w-10 h-10 rounded-full border border-[#1A1A1A]/20 hover:border-[#C9A84C] hover:bg-[#C9A84C] hover:text-white flex items-center justify-center text-[#1A1A1A] transition-all duration-200"
             >
               ←
             </button>
@@ -131,7 +131,7 @@ export default function TestimonialCarousel() {
                   className={`w-2.5 h-2.5 rounded-full transition-all duration-200 ${
                     i === current
                       ? "bg-[#C9A84C] w-6"
-                      : "bg-[#1C3A2F]/20 hover:bg-[#1C3A2F]/40"
+                      : "bg-[#1A1A1A]/20 hover:bg-[#1A1A1A]/40"
                   }`}
                 />
               ))}
@@ -140,7 +140,7 @@ export default function TestimonialCarousel() {
             <button
               onClick={next}
               aria-label="Next testimonial"
-              className="w-10 h-10 rounded-full border border-[#1C3A2F]/20 hover:border-[#C9A84C] hover:bg-[#C9A84C] hover:text-white flex items-center justify-center text-[#1C3A2F] transition-all duration-200"
+              className="w-10 h-10 rounded-full border border-[#1A1A1A]/20 hover:border-[#C9A84C] hover:bg-[#C9A84C] hover:text-white flex items-center justify-center text-[#1A1A1A] transition-all duration-200"
             >
               →
             </button>

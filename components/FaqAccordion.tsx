@@ -27,17 +27,17 @@ function AccordionItem({
   onToggle: () => void;
 }) {
   return (
-    <div className="border-b border-[#1C3A2F]/10 last:border-0">
+    <div className="border-b border-[#1A1A1A]/10 last:border-0">
       <button
         onClick={onToggle}
         aria-expanded={isOpen}
         className="w-full flex items-start justify-between gap-4 py-5 text-left group"
       >
-        <span className="font-semibold text-[#1C3A2F] group-hover:text-[#C9A84C] transition-colors duration-200 text-base leading-snug">
+        <span className="font-semibold text-[#1A1A1A] group-hover:text-[#C9A84C] transition-colors duration-200 text-base leading-snug">
           {item.q}
         </span>
         <span
-          className={`shrink-0 w-6 h-6 rounded-full border-2 border-[#1C3A2F]/30 group-hover:border-[#C9A84C] flex items-center justify-center text-[#1C3A2F] group-hover:text-[#C9A84C] transition-all duration-200 mt-0.5 ${
+          className={`shrink-0 w-6 h-6 rounded-full border-2 border-[#1A1A1A]/30 group-hover:border-[#C9A84C] flex items-center justify-center text-[#1A1A1A] group-hover:text-[#C9A84C] transition-all duration-200 mt-0.5 ${
             isOpen ? "rotate-180" : ""
           }`}
           aria-hidden="true"
@@ -87,7 +87,7 @@ function CategoryBlock({ block }: { block: FaqCategory }) {
 
   return (
     <div className="mb-10 last:mb-0">
-      <h3 className="text-xl font-bold text-[#1C3A2F] mb-4 pb-3 border-b-2 border-[#C9A84C]">
+      <h3 className="text-xl font-bold text-[#1A1A1A] mb-4 pb-3 border-b-2 border-[#C9A84C]">
         {block.category}
       </h3>
       <div>
