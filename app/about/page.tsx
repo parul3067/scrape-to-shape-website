@@ -47,13 +47,13 @@ const TEAM = [
     name: "Parul Verma",
     role: "Founder & General Contractor",
     initials: "PV",
-    bio: "Parul has 10+ years of hands-on renovation experience across the GTA. She founded Scrape to Shape with a simple belief: homeowners deserve a contractor who shows up on time, does what they say, and charges what they quote.",
+    bio: "Parul has 10+ years of hands-on renovation experience across the GTA. He founded Scrape to Shape with a simple belief: homeowners deserve a contractor who shows up on time, does what they say, and charges what they quote.",
   },
   {
-    name: "Aish Bakshi",
+    name: "Ash Bakshi",
     role: "Project Designer",
     initials: "AB",
-    bio: "Aish brings each renovation to life with a keen eye for space, material, and detail. She works closely with homeowners to translate their vision into designs that are both beautiful and buildable.",
+    bio: "Ash brings each renovation to life with a keen eye for space, material, and detail. She works closely with homeowners to translate their vision into designs that are both beautiful and buildable.",
   },
 ];
 
@@ -172,7 +172,7 @@ export default function AboutPage() {
           <div className="flex flex-wrap justify-center items-stretch gap-8">
             {TEAM.map((member, i) => (
               <ScrollReveal key={member.name} delay={i * 0.07} className="h-full">
-                <div className="bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-sm w-64 h-full">
+                <div className="bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-sm w-64 min-h-[300px]">
                   {/* Avatar placeholder */}
                   <div className="w-20 h-20 rounded-full bg-[#1A1A1A] flex items-center justify-center text-white font-bold text-2xl mb-4">
                     {member.initials}
