@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 /* TODO: replace with real photos */
 
@@ -164,9 +165,19 @@ export default function GalleryPage() {
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filtered.map((item) => (
-              <GalleryCard key={item.id} item={item} />
-            ))}
+            <AnimatePresence mode="popLayout">
+              {filtered.map((item, i) => (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 12 }}
+                  transition={{ duration: 0.35, delay: i * 0.04, ease: "easeOut" }}
+                >
+                  <GalleryCard item={item} />
+                </motion.div>
+              ))}
+            </AnimatePresence>
           </div>
         )}
       </div>

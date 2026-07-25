@@ -14,6 +14,9 @@ const GTA_CITIES = [
   "Richmond Hill",
   "Markham",
   "Oakville",
+  "Pickering",
+  "Whitby",
+  "Oshawa",
 ];
 
 const SERVICES = [
@@ -75,13 +78,32 @@ export default function ContactPage() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
-    // No real backend yet — show thank-you message
-    setSubmitted(true);
-    setForm(EMPTY_FORM);
-    setErrors({});
+    setSubmitting(true);
+    setSubmitError(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Something went wrong. Please try again.");
+      }
+      setSubmitted(true);
+      setForm(EMPTY_FORM);
+      setErrors({});
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : "Something went wrong.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -112,45 +134,33 @@ export default function ContactPage() {
               </h2>
 
               <div className="space-y-6 mb-10">
-                <a
-                  href="tel:2268991190"
-                  className="flex items-start gap-4 group"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-[#1A1A1A] flex items-center justify-center text-white text-xl shrink-0 group-hover:bg-[#C9A84C] transition-colors duration-200">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#1A1A1A] flex items-center justify-center text-white text-xl shrink-0">
                     📞
                   </div>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wider text-[#2D2D2D]/50 mb-0.5">
                       Phone
                     </p>
-                    <p className="font-bold text-[#1A1A1A] group-hover:text-[#C9A84C] transition-colors duration-200">
+                    <p className="font-bold text-[#1A1A1A]">
                       226-899-1190
                     </p>
-                    <p className="text-xs text-[#2D2D2D]/50">
-                      Mon–Fri 7am–7pm · Sat 8am–4pm
-                    </p>
                   </div>
-                </a>
+                </div>
 
-                <a
-                  href="mailto:info@scrapetoshape.ca"
-                  className="flex items-start gap-4 group"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-[#1A1A1A] flex items-center justify-center text-white text-xl shrink-0 group-hover:bg-[#C9A84C] transition-colors duration-200">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#1A1A1A] flex items-center justify-center text-white text-xl shrink-0">
                     ✉️
                   </div>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wider text-[#2D2D2D]/50 mb-0.5">
                       Email
                     </p>
-                    <p className="font-bold text-[#1A1A1A] group-hover:text-[#C9A84C] transition-colors duration-200">
-                      info@scrapetoshape.ca
-                    </p>
-                    <p className="text-xs text-[#2D2D2D]/50">
-                      We reply within one business day
+                    <p className="font-bold text-[#1A1A1A]">
+                      scrapetoshape@gmail.com
                     </p>
                   </div>
-                </a>
+                </div>
 
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-[#1A1A1A] flex items-center justify-center text-white text-xl shrink-0">
@@ -162,9 +172,6 @@ export default function ContactPage() {
                     </p>
                     <p className="font-bold text-[#1A1A1A]">
                       Greater Toronto Area, ON
-                    </p>
-                    <p className="text-xs text-[#2D2D2D]/50 mt-1 leading-relaxed">
-                      {GTA_CITIES.join(" · ")}
                     </p>
                   </div>
                 </div>
@@ -393,10 +400,15 @@ export default function ContactPage() {
 
                       <button
                         type="submit"
-                        className="w-full bg-[#C9A84C] hover:bg-[#b8963f] text-white font-semibold py-4 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 text-base"
+                        disabled={submitting}
+                        className="w-full bg-[#C9A84C] hover:bg-[#b8963f] disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold py-4 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 text-base"
                       >
-                        Send My Request
+                        {submitting ? "Sending…" : "Send My Request"}
                       </button>
+
+                      {submitError && (
+                        <p className="text-red-500 text-sm text-center">{submitError}</p>
+                      )}
 
                       <p className="text-xs text-[#2D2D2D]/40 text-center">
                         We&apos;ll never share your information. View our privacy

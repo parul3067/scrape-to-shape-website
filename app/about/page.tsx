@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import CTABanner from "@/components/CTABanner";
 import ScrollReveal from "@/components/ScrollReveal";
-import Link from "next/link";
+import StatsCounter from "@/components/StatsCounter";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -44,28 +44,16 @@ const VALUES = [
 
 const TEAM = [
   {
-    name: "Mike Andrade",
+    name: "Parul Verma",
     role: "Founder & General Contractor",
-    initials: "MA",
-    bio: "Mike has 18 years of hands-on renovation experience across the GTA. He founded Scrape to Shape with a simple belief: homeowners deserve a contractor who shows up on time, does what they say, and charges what they quote.",
+    initials: "PV",
+    bio: "Parul has 10+ years of hands-on renovation experience across the GTA. She founded Scrape to Shape with a simple belief: homeowners deserve a contractor who shows up on time, does what they say, and charges what they quote.",
   },
   {
-    name: "Lisa Osei",
-    role: "Project Manager",
-    initials: "LO",
-    bio: "Lisa coordinates scheduling, permits, and client communication across all active projects. She keeps every job on track and ensures nothing falls through the cracks.",
-  },
-  {
-    name: "Raj Patel",
-    role: "Lead Tile & Flooring Installer",
-    initials: "RP",
-    bio: "Raj has 14 years of precision tile and flooring installation experience. His attention to detail shows in every grout line.",
-  },
-  {
-    name: "Carlos Mendes",
-    role: "Lead Carpenter & Finisher",
-    initials: "CM",
-    bio: "Carlos handles cabinetry, trim, wainscoting, and finish carpentry. His work transforms raw spaces into polished, magazine-worthy rooms.",
+    name: "Aish Bakshi",
+    role: "Project Designer",
+    initials: "AB",
+    bio: "Aish brings each renovation to life with a keen eye for space, material, and detail. She works closely with homeowners to translate their vision into designs that are both beautiful and buildable.",
   },
 ];
 
@@ -82,27 +70,27 @@ export default function AboutPage() {
             About Scrape to Shape
           </h1>
           <p className="text-white/60 text-lg max-w-2xl mx-auto">
-            A GTA renovation company built on craft, honesty, and results —
+            A renovation company built on craft, honesty, and results —
             not promises.
           </p>
         </div>
       </section>
 
       {/* Company story */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F7F5F0]">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-[#F7F5F0]">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
           {/* Story visual */}
-          <ScrollReveal>
-            <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2A2A2A] rounded-3xl p-10 flex flex-col gap-8">
+          <ScrollReveal className="h-full">
+            <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2A2A2A] rounded-3xl p-8 flex flex-col gap-6 h-full">
               <div className="text-[#C9A84C] font-bold text-5xl leading-none">&ldquo;</div>
-              <p className="text-white/90 text-lg leading-relaxed italic">
+              <p className="text-white/90 text-base leading-relaxed italic">
                 I&apos;ve seen too many homeowners get burned by contractors who
                 under-quoted, over-charged, and disappeared when things got
                 hard. I started Scrape to Shape to be the company I&apos;d want
                 to hire if it was my own home.
               </p>
-              <div>
-                <p className="text-[#C9A84C] font-bold">Mike Andrade</p>
+              <div className="mt-auto">
+                <p className="text-[#C9A84C] font-bold">Parul Verma</p>
                 <p className="text-white/50 text-sm">
                   Founder, Scrape to Shape Renovations
                 </p>
@@ -112,57 +100,29 @@ export default function AboutPage() {
 
           {/* Story text */}
           <ScrollReveal delay={0.1}>
-            <p className="text-[#C9A84C] font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="text-[#C9A84C] font-semibold text-sm uppercase tracking-widest mb-2">
               Our Story
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#1A1A1A] mb-6">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#1A1A1A] mb-4">
               Built from the Ground Up
             </h2>
-            <div className="space-y-4 text-[#2D2D2D]/70 leading-relaxed">
+            <div className="space-y-3 text-[#2D2D2D]/70 text-sm leading-relaxed">
               <p>
-                Scrape to Shape Renovations was founded in the Greater Toronto
-                Area with one guiding principle: do the job right, every time.
-                Our founder Mike Andrade spent nearly two decades working in
-                residential renovation before going out on his own — not because
-                he wanted to grow a business, but because he wanted to build
-                something he was proud of.
+                After a decade of hands-on renovation work, Parul noticed
+                the same pattern: homeowners finished projects without
+                understanding what was done, why certain materials were chosen,
+                or what to watch for down the road. Contractors worked
+                <em> around</em> people instead of <em>with</em> them.
               </p>
               <p>
-                The name comes from the construction term for starting from
-                scratch — scraping back to the bare bones and building something
-                better. That&apos;s what we do, literally and figuratively, on
-                every project.
-              </p>
-              <p>
-                We serve the entire GTA — from Toronto proper to Mississauga,
-                Brampton, Etobicoke, Scarborough, North York, Vaughan, Richmond
-                Hill, Markham, and Oakville. Our crew is experienced in all
-                residential renovation trades, and we hold ourselves to the same
-                standard on a powder room as on a full-home overhaul.
-              </p>
-              <p>
-                We aren&apos;t the cheapest option in the GTA. We are the most
-                dependable.
+                Scrape to Shape was built to be different. Every project comes
+                with real conversations — about your home&apos;s structure,
+                the trade-offs in materials, and the things only a trained eye
+                would catch. We don&apos;t just renovate. We leave you knowing
+                your home better than before we arrived.
               </p>
             </div>
-
-            <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-6">
-              {[
-                { num: "18+", label: "Years experience" },
-                { num: "200+", label: "Projects completed" },
-                { num: "7", label: "Services offered" },
-                { num: "10+", label: "GTA cities served" },
-              ].map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <div className="text-3xl font-bold text-[#1A1A1A]">
-                    {stat.num}
-                  </div>
-                  <div className="text-xs text-[#2D2D2D]/50 mt-1">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
+            <StatsCounter />
           </ScrollReveal>
         </div>
       </section>
@@ -209,10 +169,10 @@ export default function AboutPage() {
             </h2>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="flex flex-wrap justify-center items-stretch gap-8">
             {TEAM.map((member, i) => (
-              <ScrollReveal key={member.name} delay={i * 0.07}>
-                <div className="bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-sm">
+              <ScrollReveal key={member.name} delay={i * 0.07} className="h-full">
+                <div className="bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-sm w-64 h-full">
                   {/* Avatar placeholder */}
                   <div className="w-20 h-20 rounded-full bg-[#1A1A1A] flex items-center justify-center text-white font-bold text-2xl mb-4">
                     {member.initials}
@@ -230,50 +190,6 @@ export default function AboutPage() {
               </ScrollReveal>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Service area */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <ScrollReveal>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#1A1A1A] mb-4">
-              Proudly Serving the GTA
-            </h2>
-            <p className="text-[#2D2D2D]/60 mb-8">
-              We serve homeowners and investors across the Greater Toronto Area,
-              including:
-            </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              {[
-                "Toronto",
-                "Mississauga",
-                "Brampton",
-                "Etobicoke",
-                "Scarborough",
-                "North York",
-                "Vaughan",
-                "Richmond Hill",
-                "Markham",
-                "Oakville",
-              ].map((city) => (
-                <span
-                  key={city}
-                  className="bg-[#1A1A1A]/5 text-[#1A1A1A] px-4 py-2 rounded-full text-sm font-medium border border-[#1A1A1A]/10"
-                >
-                  {city}
-                </span>
-              ))}
-            </div>
-            <div className="mt-8">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center bg-[#1A1A1A] hover:bg-[#2A2A2A] text-white font-semibold px-8 py-4 rounded-full transition-all duration-200"
-              >
-                Check If We Serve Your Area →
-              </Link>
-            </div>
-          </ScrollReveal>
         </div>
       </section>
 
