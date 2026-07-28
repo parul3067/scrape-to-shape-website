@@ -122,10 +122,6 @@ export default function GalleryPage() {
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Our Work Speaks for Itself
           </h1>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto">
-            Browse before-and-after project photos from across the GTA. Toggle
-            each card to compare the transformation.
-          </p>
         </div>
       </section>
 

@@ -47,13 +47,13 @@ const TEAM = [
     name: "Parul Verma",
     role: "Founder & General Contractor",
     initials: "PV",
-    bio: "Parul has 10+ years of hands-on renovation experience across the GTA. He founded Scrape to Shape with a simple belief: homeowners deserve a contractor who shows up on time, does what they say, and charges what they quote.",
+    bio: "With over 10 years in residential renovation, Parul built this company on three commitments: full transparency in every quote, timely delivery on every project, and absolutely no hidden costs.",
   },
   {
     name: "Ash Bakshi",
     role: "Project Designer",
     initials: "AB",
-    bio: "Ash brings each renovation to life with a keen eye for space, material, and detail. She works closely with homeowners to translate their vision into designs that are both beautiful and buildable.",
+    bio: "Ash leads every project with a sharp eye for proportion, material, and finish. She collaborates closely with homeowners from concept to completion, turning ideas into spaces that are refined, functional, and built to last.",
   },
 ];
 
@@ -69,10 +69,6 @@ export default function AboutPage() {
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             About Scrape to Shape
           </h1>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto">
-            A renovation company built on craft, honesty, and results —
-            not promises.
-          </p>
         </div>
       </section>
 
@@ -169,21 +165,20 @@ export default function AboutPage() {
             </h2>
           </ScrollReveal>
 
-          <div className="flex flex-wrap justify-center items-stretch gap-8">
+          <div className="grid grid-cols-2 gap-8 max-w-2xl mx-auto">
             {TEAM.map((member, i) => (
               <ScrollReveal key={member.name} delay={i * 0.07} className="h-full">
-                <div className="bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-sm w-64 min-h-[300px]">
-                  {/* Avatar placeholder */}
-                  <div className="w-20 h-20 rounded-full bg-[#1A1A1A] flex items-center justify-center text-white font-bold text-2xl mb-4">
+                <div className="bg-white rounded-2xl p-6 flex flex-col text-justify shadow-sm h-full">
+                  <div className="w-20 h-20 rounded-full bg-[#1A1A1A] flex items-center justify-center text-white font-bold text-2xl mb-4 mx-auto">
                     {member.initials}
                   </div>
-                  <h3 className="font-bold text-[#1A1A1A] text-lg">
+                  <h3 className="font-bold text-[#1A1A1A] text-lg text-center">
                     {member.name}
                   </h3>
-                  <p className="text-[#C9A84C] text-sm font-medium mb-3">
+                  <p className="text-[#C9A84C] text-sm font-medium mb-3 text-center">
                     {member.role}
                   </p>
-                  <p className="text-[#2D2D2D]/60 text-sm leading-relaxed">
+                  <p className="text-[#2D2D2D]/60 text-sm leading-relaxed hyphens-auto">
                     {member.bio}
                   </p>
                 </div>

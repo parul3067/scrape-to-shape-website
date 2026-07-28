@@ -6,22 +6,22 @@ import ScrollDown from "./ScrollDown";
 
 const TESTIMONIALS = [
   {
-    name: "Sandra M.",
-    neighbourhood: "Etobicoke",
+    name: "Janhvi & Shirish",
+    neighbourhood: "Whitby",
     project: "Kitchen Renovation",
     quote:
       "We had our entire kitchen gutted and rebuilt by Scrape to Shape and couldn't be happier. They finished on schedule, the quote was exactly what we paid, and the craftsmanship is stunning. We get compliments every time someone visits.",
   },
   {
-    name: "David & Priya K.",
-    neighbourhood: "Mississauga",
+    name: "Utkarsha & Vivek",
+    neighbourhood: "Oshawa",
     project: "Basement Finishing",
     quote:
       "Our basement was a blank concrete box — now it's a legal suite that pays part of our mortgage. The team handled permits, waterproofing, framing, and finishing without us having to worry about a thing. Highly recommend!",
   },
   {
-    name: "James T.",
-    neighbourhood: "North York",
+    name: "Sneha & Akshay",
+    neighbourhood: "Brampton",
     project: "Bathroom Renovation",
     quote:
       "I've hired contractors before who left me with headaches and cost overruns. Scrape to Shape was completely different — professional, clean, and honest. My main bathroom looks like something out of a magazine. Will definitely use them again.",

@@ -63,14 +63,20 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Phone (desktop) */}
-          <div className="hidden lg:flex items-center">
+          {/* Phone + Get Quote (desktop) */}
+          <div className="hidden lg:flex items-center gap-3">
             <a
               href="tel:2268991190"
-              className="bg-[#C9A84C] hover:bg-[#b8963f] text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-colors duration-200 whitespace-nowrap"
+              className="bg-[#C9A84C] hover:bg-[#b8963f] text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-colors duration-200 whitespace-nowrap w-36 text-center"
             >
               226-899-1190
             </a>
+            <Link
+              href="/contact"
+              className="bg-[#C9A84C] hover:bg-[#b8963f] text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-colors duration-200 whitespace-nowrap w-36 text-center"
+            >
+              Get Quote
+            </Link>
           </div>
 
           {/* Hamburger (mobile) */}

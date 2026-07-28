@@ -4,18 +4,20 @@ import { useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
 
 const STATS = [
-  { target: 10, suffix: "+", label: "Years of Experience" },
-  { target: 100, suffix: "+", label: "Projects Completed" },
+  { target: 10, suffix: "+", label: "Years of Experience", duration: 6000 },
+  { target: 100, suffix: "+", label: "Projects Completed", duration: 6000 },
 ];
 
 function CountUpTile({
   target,
   suffix,
   label,
+  duration,
 }: {
   target: number;
   suffix: string;
   label: string;
+  duration: number;
 }) {
   const [count, setCount] = useState(1);
   const ref = useRef<HTMLDivElement>(null);
@@ -23,7 +25,6 @@ function CountUpTile({
 
   useEffect(() => {
     if (!inView) return;
-    const duration = 1800;
     const steps = target;
     let step = 0;
     const timer = setInterval(() => {

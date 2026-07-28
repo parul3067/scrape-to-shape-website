@@ -81,10 +81,6 @@ export default function KnowYourHousePage() {
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Know Your House
           </h1>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto">
-            Practical guides to help GTA homeowners understand their homes,
-            ask better questions, and make smarter renovation decisions.
-          </p>
         </div>
       </section>
 

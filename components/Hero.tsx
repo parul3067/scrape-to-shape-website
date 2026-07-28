@@ -50,18 +50,6 @@ export default function Hero() {
           to Shape
         </motion.h1>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ ...spring, delay: 0.4 }}
-        >
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-[#C9A84C] hover:bg-[#b8963f] active:translate-y-px text-white font-semibold text-sm px-8 py-4 rounded-full transition-colors duration-200 shadow-lg"
-          >
-            Get a Free Quote
-          </Link>
-        </motion.div>
       </div>
 
       {/* Scroll indicator */}

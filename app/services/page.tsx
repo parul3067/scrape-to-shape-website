@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import CTABanner from "@/components/CTABanner";
 import ScrollReveal from "@/components/ScrollReveal";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -12,10 +12,11 @@ export const metadata: Metadata = {
 const SERVICES = [
   {
     name: "Bathroom Renovation",
+    image: "https://plus.unsplash.com/premium_photo-1661902468735-eabf780f8ff6?auto=format&fit=crop&w=800&q=80",
     icon: "🚿",
     tagline: "Your sanctuary, rebuilt.",
     description:
-      "Your bathroom should be a retreat — not a source of stress. We handle everything from complete gut-and-rebuilds to targeted upgrades. Our team manages tile installation, plumbing rough-in and finish work, vanity and fixture selection, custom shower systems, soaker tub installs, and all waterproofing. We work with you to choose materials that balance aesthetics, longevity, and your budget.",
+      "Your bathroom should be a retreat — not a source of stress. We handle everything from complete gut-and-rebuilds to targeted upgrades. Our services include:",
     bullets: [
       "Full gut and rebuild or targeted refresh",
       "Tile flooring and shower/tub surrounds",
@@ -31,6 +32,7 @@ const SERVICES = [
   },
   {
     name: "Kitchen Renovation",
+    image: "https://i.pinimg.com/1200x/a3/e3/e1/a3e3e1f5c4d9f1a423f8afacdca72c81.jpg",
     icon: "🍳",
     tagline: "The heart of your home, transformed.",
     description:
@@ -45,11 +47,12 @@ const SERVICES = [
       "Appliance cut-outs and hook-ups",
       "Island and pantry additions",
     ],
-    timeline: "4–6 weeks typical",
+    timeline: "1–2 weeks typical",
     color: "from-orange-50 to-orange-100",
   },
   {
     name: "Basement Finishing",
+    image: "https://i.pinimg.com/control1/1200x/2b/aa/90/2baa9056433ededcedefa1fd0e9415e7.jpg",
     icon: "🏠",
     tagline: "Unlock the space beneath your feet.",
     description:
@@ -69,6 +72,7 @@ const SERVICES = [
   },
   {
     name: "Full House Renovation",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
     icon: "🔨",
     tagline: "When one room isn't enough.",
     description:
@@ -88,6 +92,7 @@ const SERVICES = [
   },
   {
     name: "Landscaping & Sodding",
+    image: "https://i.pinimg.com/1200x/04/66/53/04665323fa107dc373da84561d3fbd3e.jpg",
     icon: "🌿",
     tagline: "Curb appeal that turns heads.",
     description:
@@ -107,6 +112,7 @@ const SERVICES = [
   },
   {
     name: "Roofing",
+    image: "https://i.pinimg.com/1200x/8a/4a/9b/8a4a9b368e01c302a194b13dc8379f26.jpg",
     icon: "🏗️",
     tagline: "Protection starts at the top.",
     description:
@@ -126,6 +132,7 @@ const SERVICES = [
   },
   {
     name: "Flooring & Tiling",
+    image: "https://i.pinimg.com/control1/1200x/28/e0/16/28e0161c3bbf1497fd7f8bd6dc45f2ea.jpg",
     icon: "🪵",
     tagline: "The foundation of every beautiful room.",
     description:
@@ -157,10 +164,6 @@ export default function ServicesPage() {
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Our Services
           </h1>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto">
-            Seven complete renovation services, all under one roof. One crew,
-            one contract, one company you can trust across the GTA.
-          </p>
         </div>
       </section>
 
@@ -176,19 +179,20 @@ export default function ServicesPage() {
           >
             <div className="max-w-6xl mx-auto">
               <div
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start ${
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch ${
                   index % 2 !== 0 ? "lg:flex-row-reverse" : ""
                 }`}
               >
-                {/* Visual / icon */}
-                <ScrollReveal delay={0}>
-                  <div
-                    className={`bg-gradient-to-br ${service.color} rounded-3xl h-64 lg:h-80 flex flex-col items-center justify-center gap-4`}
-                  >
-                    <span className="text-7xl">{service.icon}</span>
-                    <span className="text-[#1A1A1A] font-semibold text-lg">
-                      {service.name}
-                    </span>
+                {/* Visual */}
+                <ScrollReveal delay={0} className="h-full">
+                  <div className="relative rounded-3xl overflow-hidden h-full min-h-64">
+                    <Image
+                      src={service.image}
+                      alt={service.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
                   </div>
                 </ScrollReveal>
 
@@ -227,12 +231,6 @@ export default function ServicesPage() {
                     </span>
                   </div>
 
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center justify-center bg-[#1A1A1A] hover:bg-[#2A2A2A] text-white font-semibold px-6 py-3 rounded-full transition-all duration-200"
-                  >
-                    Get a Quote for {service.name} →
-                  </Link>
                 </ScrollReveal>
               </div>
             </div>

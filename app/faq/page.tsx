@@ -89,10 +89,6 @@ export default function FaqPage() {
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Frequently Asked Questions
           </h1>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto">
-            Answers to what GTA homeowners ask us most often — about pricing,
-            timelines, the renovation process, and our warranty.
-          </p>
         </div>
       </section>
 

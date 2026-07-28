@@ -84,11 +84,6 @@ export default function ProcessPage() {
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Our 6-Step Process
           </h1>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto">
-            We believe renovations should be exciting, not stressful. Our
-            process is built around transparency, communication, and delivering
-            exactly what we promise.
-          </p>
         </div>
       </section>
 

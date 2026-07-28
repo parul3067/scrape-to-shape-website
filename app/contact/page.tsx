@@ -117,10 +117,6 @@ export default function ContactPage() {
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Contact Us
           </h1>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto">
-            Ready to get started? Send us a message and we&apos;ll schedule a
-            free on-site consultation within 48 hours.
-          </p>
         </div>
       </section>
 
