@@ -1,3 +1,11 @@
+import { redirect } from "next/navigation";
+
+// FAQ page is temporarily disabled. Uncomment the code below to re-enable it.
+export default function FaqPage() {
+  redirect("/");
+}
+
+/*
 import type { Metadata } from "next";
 import FaqAccordion from "@/components/FaqAccordion";
 import CTABanner from "@/components/CTABanner";
@@ -80,7 +88,6 @@ const FAQ_DATA = [
 export default function FaqPage() {
   return (
     <div className="pt-16">
-      {/* Page header */}
       <section className="bg-[#1A1A1A] py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-[#C9A84C] font-semibold text-sm uppercase tracking-widest mb-3">
@@ -92,7 +99,6 @@ export default function FaqPage() {
         </div>
       </section>
 
-      {/* FAQ content */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F7F5F0]">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
@@ -101,7 +107,6 @@ export default function FaqPage() {
         </div>
       </section>
 
-      {/* Still have a question? */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-3xl mx-auto text-center">
           <ScrollReveal>
@@ -138,3 +143,4 @@ export default function FaqPage() {
     </div>
   );
 }
+*/
