@@ -138,9 +138,12 @@ export default function ContactPage() {
                     <p className="text-xs font-semibold uppercase tracking-wider text-[#2D2D2D]/50 mb-0.5">
                       Phone
                     </p>
-                    <p className="font-bold text-[#1A1A1A]">
+                    <a
+                      href="tel:2268991190"
+                      className="font-bold text-[#1A1A1A] hover:text-[#C9A84C] transition-colors duration-200"
+                    >
                       226-899-1190
-                    </p>
+                    </a>
                   </div>
                 </div>
 
@@ -152,9 +155,12 @@ export default function ContactPage() {
                     <p className="text-xs font-semibold uppercase tracking-wider text-[#2D2D2D]/50 mb-0.5">
                       Email
                     </p>
-                    <p className="font-bold text-[#1A1A1A]">
+                    <a
+                      href="mailto:scrapetoshape@gmail.com"
+                      className="font-bold text-[#1A1A1A] hover:text-[#C9A84C] transition-colors duration-200 break-all"
+                    >
                       scrapetoshape@gmail.com
-                    </p>
+                    </a>
                   </div>
                 </div>
 

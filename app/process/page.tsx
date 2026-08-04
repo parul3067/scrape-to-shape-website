@@ -122,7 +122,7 @@ export default function ProcessPage() {
         </div>
       </div>
 
-      {/* FAQ teaser */}
+      {/* FAQ teaser — commented out
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-3xl mx-auto text-center">
           <ScrollReveal>
@@ -142,6 +142,7 @@ export default function ProcessPage() {
           </ScrollReveal>
         </div>
       </section>
+      */}
 
       <CTABanner
         headline="Ready to Get Started?"

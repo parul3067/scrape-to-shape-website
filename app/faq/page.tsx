@@ -1,11 +1,3 @@
-import { redirect } from "next/navigation";
-
-// FAQ page is temporarily disabled. Uncomment the code below to re-enable it.
-export default function FaqPage() {
-  redirect("/");
-}
-
-/*
 import type { Metadata } from "next";
 import FaqAccordion from "@/components/FaqAccordion";
 import CTABanner from "@/components/CTABanner";
@@ -143,4 +135,3 @@ export default function FaqPage() {
     </div>
   );
 }
-*/
