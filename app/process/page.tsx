@@ -9,66 +9,80 @@ export const metadata: Metadata = {
     "Learn how Scrape to Shape Renovations works — from free consultation to written warranty. A transparent 6-step process with no surprises.",
 };
 
+const iconClass = "w-6 h-6";
+
 const STEPS = [
   {
-    num: 1,
-    icon: "💬",
+    num: "01",
     title: "Free Consultation",
-    desc: "We visit your space, listen to your vision, and assess the scope — no pressure, no cost.",
+    desc: "We visit your space, listen to your vision, and assess the scope — no cost, no pressure.",
     detail:
-      "We start every project with an in-person, no-obligation site visit. One of our experienced estimators will walk through the space with you, ask questions about your goals, lifestyle, and timeline, and take measurements. We want to understand what you actually want — not just what you think you can afford — before we talk numbers. There is no charge for this visit, and there is absolutely no pressure to proceed.",
-    color: "bg-blue-50",
-    accent: "border-blue-300",
+      "An estimator walks the space with you, discusses your goals and timeline, and takes measurements. No fee, no obligation.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className={iconClass}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+      </svg>
+    ),
   },
   {
-    num: 2,
-    icon: "📋",
+    num: "02",
     title: "Quote & Proposal",
     desc: "A detailed written quote with materials, timeline, and milestones. No surprises.",
     detail:
-      "Within a few business days of your consultation, we'll send you a written, itemized quote. You'll see labour broken out by trade, material allowances with specific product specs, permit fees, and a project timeline with payment milestones. We use fixed-price contracts — not time-and-materials — so the number in your quote is the number you pay, barring scope changes you initiate or discoveries of hidden damage that couldn't be anticipated. We review the quote with you line-by-line so you understand every dollar.",
-    color: "bg-green-50",
-    accent: "border-green-300",
+      "You'll receive a fixed-price, itemized quote within a few business days — labour by trade, material specs, permits, and milestone payments. We review it with you line by line.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className={iconClass}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+      </svg>
+    ),
   },
   {
-    num: 3,
-    icon: "✏️",
+    num: "03",
     title: "Design & Planning",
-    desc: "Finalise selections, source materials, and obtain all required permits.",
+    desc: "Finalize selections, source materials, and obtain all required permits.",
     detail:
-      "Once you've signed the contract and paid your deposit, we move into planning. This involves finalising your material selections (tile, fixtures, cabinetry, flooring — whatever applies to your project), placing orders to ensure materials arrive on time, and applying for any required permits. We handle all permit applications on your behalf, track their status, and schedule required inspections. You'll receive a detailed schedule so you know exactly when crews arrive and what phase of work is happening each day.",
-    color: "bg-purple-50",
-    accent: "border-purple-300",
+      "After contract signing, we lock in material selections, place orders, and handle all permit applications on your behalf. You get a detailed day-by-day schedule.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className={iconClass}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+      </svg>
+    ),
   },
   {
-    num: 4,
-    icon: "🔨",
+    num: "04",
     title: "Build",
-    desc: "Our crew executes with care — you get regular updates and clean job sites daily.",
+    desc: "Our crew executes with care — regular updates and clean job sites daily.",
     detail:
-      "When the build phase starts, our crews show up on time and get to work. We set up protective coverings over floors and furniture, install dust barriers where necessary, and establish a clean material staging area. You'll receive regular progress updates — photos, daily texts, or however you prefer to stay informed. Our project manager is reachable throughout the build. We clean up at the end of every work day, and we keep you informed of any schedule adjustments ahead of time. If we encounter anything unexpected behind walls or under floors, we document it, photograph it, discuss your options, and get written approval before proceeding — no surprise invoices.",
-    color: "bg-orange-50",
-    accent: "border-orange-300",
+      "Crews arrive on time, set up dust barriers and protective coverings, and clean up at the end of each day. Anything unexpected behind walls is documented and approved in writing before we proceed.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className={iconClass}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+      </svg>
+    ),
   },
   {
-    num: 5,
-    icon: "✅",
+    num: "05",
     title: "Final Walkthrough",
     desc: "We walk through every detail together before we call it done.",
     detail:
-      "Before we consider a project complete, we schedule a final walkthrough with you. We go through every finish, every fixture, every transition, and every detail on the original scope list. Anything that doesn't meet your expectations gets added to a punch list, and we come back to address each item before issuing your final invoice. Your satisfaction isn't a nice-to-have — it's the only definition of done we accept.",
-    color: "bg-teal-50",
-    accent: "border-teal-300",
+      "We review every finish and fixture against the original scope. Anything that doesn't meet your expectations goes on a punch list — addressed before the final invoice.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className={iconClass}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+      </svg>
+    ),
   },
   {
-    num: 6,
-    icon: "🛡️",
+    num: "06",
     title: "Warranty & Follow-up",
     desc: "We stand behind our work with a written warranty and post-project follow-up.",
     detail:
-      "Every Scrape to Shape project comes with a written workmanship warranty. The duration varies by project type — ask us for specifics on your scope. Beyond the warranty, we do a post-project follow-up call to see how you're enjoying the space and address any minor settling or touch-up items. We want to be your renovation company for life — not just for this project. Many of our best clients are repeat customers and referrals, and that's the highest compliment we can receive.",
-    color: "bg-yellow-50",
-    accent: "border-yellow-300",
+      "Every project comes with a written workmanship warranty. We follow up after completion to address any settling or touch-up items — because many of our best clients become referrals.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className={iconClass}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.623 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+      </svg>
+    ),
   },
 ];
 
@@ -89,32 +103,36 @@ export default function ProcessPage() {
 
       {/* Steps */}
       <div className="bg-[#F7F5F0] py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto flex flex-col gap-10">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           {STEPS.map((step) => (
             <ScrollReveal key={step.num} delay={0.05}>
-              <div
-                className={`${step.color} border-l-4 ${step.accent} rounded-2xl p-8 sm:p-10`}
-              >
-                <div className="flex items-start gap-6">
-                  {/* Badge */}
-                  <div className="shrink-0 w-16 h-16 rounded-2xl bg-[#1A1A1A] flex flex-col items-center justify-center text-white">
-                    <span className="text-2xl leading-none">{step.icon}</span>
-                    <span className="text-[10px] font-bold mt-0.5 opacity-70">
+              <div className="group relative bg-white rounded-2xl p-7 h-full border border-[#1A1A1A]/5 shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden">
+                {/* Faint background step number */}
+                <span
+                  aria-hidden="true"
+                  className="absolute -top-2 -right-2 font-bold text-[#1A1A1A]/[0.04] leading-none select-none pointer-events-none"
+                  style={{ fontSize: "7rem" }}
+                >
+                  {step.num}
+                </span>
+
+                <div className="relative flex flex-col gap-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-11 h-11 rounded-xl bg-[#1A1A1A] flex items-center justify-center text-[#C9A84C]">
+                      {step.icon}
+                    </div>
+                    <span className="text-[#C9A84C] font-bold text-xs uppercase tracking-widest">
                       Step {step.num}
                     </span>
                   </div>
 
-                  <div className="flex-1 min-w-0">
-                    <h2 className="text-2xl font-bold text-[#1A1A1A] mb-2">
-                      {step.title}
-                    </h2>
-                    <p className="text-[#C9A84C] font-medium italic text-base mb-4">
-                      &ldquo;{step.desc}&rdquo;
-                    </p>
-                    <p className="text-[#2D2D2D]/70 leading-relaxed text-base">
-                      {step.detail}
-                    </p>
-                  </div>
+                  <h2 className="text-xl font-bold text-[#1A1A1A]">
+                    {step.title}
+                  </h2>
+
+                  <p className="text-[#2D2D2D]/70 leading-relaxed text-sm">
+                    {step.detail}
+                  </p>
                 </div>
               </div>
             </ScrollReveal>

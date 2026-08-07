@@ -21,6 +21,14 @@ export default function Header() {
   const pathname = usePathname();
   const isHome = pathname === "/";
 
+  const handleNavClick = (href: string) => (e: React.MouseEvent) => {
+    setMenuOpen(false);
+    if (pathname === href) {
+      e.preventDefault();
+      window.location.reload();
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 80);
@@ -43,7 +51,7 @@ export default function Header() {
           <Link
             href="/"
             className="flex items-center gap-2 shrink-0"
-            onClick={() => setMenuOpen(false)}
+            onClick={handleNavClick("/")}
           >
             <span className="text-[#C9A84C] font-bold text-xl lg:text-2xl tracking-tight leading-tight">
               Scrape to Shape
@@ -56,6 +64,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={handleNavClick(link.href)}
                 className="text-white/90 hover:text-[#C9A84C] text-sm font-medium transition-colors duration-200 whitespace-nowrap"
               >
                 {link.label}
@@ -107,7 +116,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 className="text-white/90 hover:text-[#C9A84C] font-medium py-2.5 px-2 rounded-md hover:bg-white/5 transition-colors duration-200"
-                onClick={() => setMenuOpen(false)}
+                onClick={handleNavClick(link.href)}
               >
                 {link.label}
               </Link>

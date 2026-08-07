@@ -57,7 +57,7 @@ export default function HighlightStats() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-6">
           <h2 className="font-bold text-white leading-tight text-lg sm:text-xl">
-            A Decade of Craft and Hundreds of Homes Transformed
+            A Decade of Craft & Hundreds of Homes Transformed
           </h2>
         </div>
         <div className="grid grid-cols-2 gap-6">

@@ -192,7 +192,7 @@ function StorySection() {
               </p>
               <div className="pt-2">
                 <p className="font-bold text-[#1A1A1A] text-sm">Parul Verma</p>
-                <p className="text-[#2D2D2D]/50 text-xs uppercase tracking-widest">Founder & General Contractor</p>
+                <p className="text-[#2D2D2D]/50 text-xs tracking-wide">Founder & General Contractor</p>
               </div>
             </div>
             <div className="mt-10">
