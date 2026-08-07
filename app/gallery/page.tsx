@@ -16,7 +16,7 @@ const ALBUMS: Album[] = [
     slug: "kitchen",
     name: "Kitchen",
     photos: Array.from(
-      { length: 43 },
+      { length: 30 },
       (_, i) => `/gallery/kitchen/kitchen-${String(i + 1).padStart(2, "0")}.jpg`
     ),
   },
