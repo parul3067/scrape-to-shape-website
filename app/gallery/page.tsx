@@ -70,7 +70,6 @@ const ALBUMS: Album[] = [
   { slug: "flooring", name: "Flooring", photos: [] },
   { slug: "tiling", name: "Tiling", photos: [] },
   { slug: "plumbing", name: "Plumbing", photos: [] },
-  { slug: "electrical", name: "Electrical", photos: [] },
   {
     slug: "landscaping",
     name: "Landscaping",
@@ -79,7 +78,6 @@ const ALBUMS: Album[] = [
       (_, i) => `/gallery/landscaping/landscaping-${String(i + 1).padStart(2, "0")}.jpg`
     ),
   },
-  { slug: "roofing", name: "Roofing", photos: [] },
   {
     slug: "wainscotting",
     name: "Wainscotting",
@@ -359,7 +357,7 @@ export default function GalleryPage() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5"
+              className="grid grid-cols-2 md:grid-cols-4 gap-6"
             >
               {ALBUMS.map((album, i) => {
                 const cover = albumCover(album);
@@ -387,11 +385,11 @@ export default function GalleryPage() {
                       </>
                     )}
                     <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <p className="text-[#C9A84C] font-bold text-base text-center px-4">
+                      <p className="text-[#C9A84C] font-bold text-lg sm:text-xl text-center px-4">
                         {album.name}
                       </p>
                       {hasContent && (
-                        <p className="text-white/60 text-xs mt-1">
+                        <p className="text-white/60 text-sm mt-1.5">
                           {album.projects
                             ? `${album.projects.length} projects`
                             : `${total} photos`}
