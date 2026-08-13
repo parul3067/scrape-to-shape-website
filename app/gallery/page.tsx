@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import CTABanner from "@/components/CTABanner";
@@ -32,6 +32,7 @@ const KITCHEN_PROJECTS: Project[] = [
   { slug: "farewell-st-oshawa", name: "Farewell St, Oshawa", photos: kitchenPhotos("farewell-st-oshawa", 12) },
   { slug: "flemington-dr-brampton", name: "Flemington Dr, Brampton", photos: kitchenPhotos("flemington-dr-brampton", 4) },
   { slug: "gail-st-cambridge", name: "Gail St, Cambridge", photos: kitchenPhotos("gail-st-cambridge", 2) },
+  { slug: "holst-ave-markham", name: "Holst Ave, Markham", photos: kitchenPhotos("holst-ave-markham", 6) },
   { slug: "krista-ct-markham", name: "Krista Ct, Markham", photos: kitchenPhotos("krista-ct-markham", 2) },
   { slug: "lloyd-cr-brampton", name: "Lloyd Cr, Brampton", photos: kitchenPhotos("lloyd-cr-brampton", 4) },
   { slug: "nash-rd-courtice", name: "Nash Rd, Courtice", photos: kitchenPhotos("nash-rd-courtice", 2) },
@@ -74,7 +75,7 @@ const ALBUMS: Album[] = [
     slug: "landscaping",
     name: "Landscaping",
     photos: Array.from(
-      { length: 8 },
+      { length: 11 },
       (_, i) => `/gallery/landscaping/landscaping-${String(i + 1).padStart(2, "0")}.jpg`
     ),
   },
@@ -161,6 +162,10 @@ export default function GalleryPage() {
       setExplodedView(false);
     }
   };
+
+  // Track touch start position for swipe navigation
+  const touchStartX = useRef<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
 
   const closeLightbox = useCallback(() => setLightboxIndex(null), []);
   const nextPhoto = useCallback(() => {
@@ -412,8 +417,24 @@ export default function GalleryPage() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 sm:p-8"
+            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 sm:p-8 touch-pan-y"
             onClick={closeLightbox}
+            onTouchStart={(e) => {
+              touchStartX.current = e.touches[0].clientX;
+              touchStartY.current = e.touches[0].clientY;
+            }}
+            onTouchEnd={(e) => {
+              if (touchStartX.current === null || touchStartY.current === null) return;
+              const dx = e.changedTouches[0].clientX - touchStartX.current;
+              const dy = e.changedTouches[0].clientY - touchStartY.current;
+              touchStartX.current = null;
+              touchStartY.current = null;
+              // Horizontal swipe with 50px threshold, dominant over vertical
+              if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+                if (dx < 0) nextPhoto();
+                else prevPhoto();
+              }
+            }}
           >
             <button
               onClick={(e) => {
@@ -421,7 +442,7 @@ export default function GalleryPage() {
                 closeLightbox();
               }}
               aria-label="Close"
-              className="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center transition-colors z-10"
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -434,7 +455,7 @@ export default function GalleryPage() {
                 prevPhoto();
               }}
               aria-label="Previous photo"
-              className="absolute left-2 sm:left-6 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
+              className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center transition-colors z-10"
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -447,7 +468,7 @@ export default function GalleryPage() {
                 nextPhoto();
               }}
               aria-label="Next photo"
-              className="absolute right-2 sm:right-6 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
+              className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center transition-colors z-10"
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
