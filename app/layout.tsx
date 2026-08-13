@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Scrape to Shape Renovations | GTA Home Renovation Experts",
+    default: "Scrape to Shape Renovations | Your Trusted Home Renovation Experts",
     template: "%s | Scrape to Shape Renovations",
   },
   description:

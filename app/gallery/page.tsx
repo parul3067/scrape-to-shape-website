@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import CTABanner from "@/components/CTABanner";
 
 type Project = {
@@ -99,6 +100,161 @@ function albumTotal(album: Album): number {
   return 0;
 }
 
+// ─── Lightbox modal with zoom + slide transitions ─────────────────────────
+const slideVariants = {
+  enter: (dir: number) => ({ x: dir > 0 ? "100%" : "-100%", opacity: 0 }),
+  center: { x: 0, opacity: 1 },
+  exit: (dir: number) => ({ x: dir > 0 ? "-100%" : "100%", opacity: 0 }),
+};
+
+function LightboxModal({
+  photos,
+  index,
+  direction,
+  alt,
+  onClose,
+  onNext,
+  onPrev,
+  touchStartX,
+  touchStartY,
+}: {
+  photos: string[];
+  index: number;
+  direction: number;
+  alt: string;
+  onClose: () => void;
+  onNext: () => void;
+  onPrev: () => void;
+  touchStartX: React.MutableRefObject<number | null>;
+  touchStartY: React.MutableRefObject<number | null>;
+}) {
+  // Track zoom state so we can disable swipe/click-close while zoomed
+  const [isZoomed, setIsZoomed] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      className="fixed inset-0 z-[100] bg-black flex items-center justify-center touch-pan-y overflow-hidden"
+      onClick={() => {
+        if (!isZoomed) onClose();
+      }}
+      onTouchStart={(e) => {
+        if (isZoomed) return;
+        touchStartX.current = e.touches[0].clientX;
+        touchStartY.current = e.touches[0].clientY;
+      }}
+      onTouchEnd={(e) => {
+        if (isZoomed) return;
+        if (touchStartX.current === null || touchStartY.current === null) return;
+        const dx = e.changedTouches[0].clientX - touchStartX.current;
+        const dy = e.changedTouches[0].clientY - touchStartY.current;
+        touchStartX.current = null;
+        touchStartY.current = null;
+        if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+          if (dx < 0) onNext();
+          else onPrev();
+        }
+      }}
+    >
+      {/* Close */}
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          onClose();
+        }}
+        aria-label="Close"
+        className="absolute top-4 right-4 sm:top-6 sm:right-6 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center transition-colors z-20"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-6 h-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      {/* Prev */}
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          onPrev();
+        }}
+        aria-label="Previous photo"
+        className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center transition-colors z-20"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-6 h-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      {/* Next */}
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          onNext();
+        }}
+        aria-label="Next photo"
+        className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center transition-colors z-20"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-6 h-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      {/* Photo stage: consistent envelope, slide transitions, zoom wrapper */}
+      <div className="relative w-full h-full max-w-6xl max-h-[85vh] px-4 sm:px-14">
+        <AnimatePresence mode="popLayout" custom={direction} initial={false}>
+          <motion.div
+            key={index}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{
+              x: { type: "spring", stiffness: 320, damping: 34 },
+              opacity: { duration: 0.2 },
+            }}
+            className="absolute inset-0 flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <TransformWrapper
+              key={index}
+              initialScale={1}
+              minScale={1}
+              maxScale={4}
+              doubleClick={{ mode: "toggle", step: 2 }}
+              wheel={{ step: 0.15 }}
+              pinch={{ step: 5 }}
+              panning={{ velocityDisabled: true }}
+              onZoom={({ state }) => setIsZoomed(state.scale > 1.01)}
+              onTransformed={({ state }) => setIsZoomed(state.scale > 1.01)}
+            >
+              <TransformComponent
+                wrapperStyle={{ width: "100%", height: "100%" }}
+                contentStyle={{ width: "100%", height: "100%" }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={photos[index]}
+                  alt={`${alt} photo ${index + 1}`}
+                  draggable={false}
+                  className="w-full h-full object-contain select-none"
+                />
+              </TransformComponent>
+            </TransformWrapper>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      {/* Counter */}
+      <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/70 text-sm tabular-nums z-20 pointer-events-none">
+        {index + 1} / {photos.length}
+      </p>
+    </motion.div>
+  );
+}
+
 function ExplodeToggle({
   on,
   onChange,
@@ -137,6 +293,7 @@ export default function GalleryPage() {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
   const [explodedView, setExplodedView] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [slideDirection, setSlideDirection] = useState(1); // 1 = next, -1 = prev
 
   // Photos currently shown (project photos, exploded album photos, or direct album photos)
   const currentPhotos: string[] = activeProject
@@ -170,10 +327,12 @@ export default function GalleryPage() {
   const closeLightbox = useCallback(() => setLightboxIndex(null), []);
   const nextPhoto = useCallback(() => {
     if (lightboxIndex === null || currentPhotos.length === 0) return;
+    setSlideDirection(1);
     setLightboxIndex((lightboxIndex + 1) % currentPhotos.length);
   }, [lightboxIndex, currentPhotos.length]);
   const prevPhoto = useCallback(() => {
     if (lightboxIndex === null || currentPhotos.length === 0) return;
+    setSlideDirection(-1);
     setLightboxIndex(
       (lightboxIndex - 1 + currentPhotos.length) % currentPhotos.length
     );
@@ -412,91 +571,17 @@ export default function GalleryPage() {
       {/* Lightbox */}
       <AnimatePresence>
         {lightboxIndex !== null && currentPhotos.length > 0 && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 sm:p-8 touch-pan-y"
-            onClick={closeLightbox}
-            onTouchStart={(e) => {
-              touchStartX.current = e.touches[0].clientX;
-              touchStartY.current = e.touches[0].clientY;
-            }}
-            onTouchEnd={(e) => {
-              if (touchStartX.current === null || touchStartY.current === null) return;
-              const dx = e.changedTouches[0].clientX - touchStartX.current;
-              const dy = e.changedTouches[0].clientY - touchStartY.current;
-              touchStartX.current = null;
-              touchStartY.current = null;
-              // Horizontal swipe with 50px threshold, dominant over vertical
-              if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
-                if (dx < 0) nextPhoto();
-                else prevPhoto();
-              }
-            }}
-          >
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                closeLightbox();
-              }}
-              aria-label="Close"
-              className="absolute top-4 right-4 sm:top-6 sm:right-6 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center transition-colors z-10"
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                prevPhoto();
-              }}
-              aria-label="Previous photo"
-              className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center transition-colors z-10"
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                nextPhoto();
-              }}
-              aria-label="Next photo"
-              className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center transition-colors z-10"
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-
-            <motion.div
-              key={lightboxIndex}
-              initial={{ opacity: 0, scale: 0.98 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.2 }}
-              className="relative w-full h-full max-w-6xl max-h-[85vh]"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <Image
-                src={currentPhotos[lightboxIndex]}
-                alt={`${activeProject?.name ?? activeAlbum?.name ?? "Gallery"} photo ${lightboxIndex + 1}`}
-                fill
-                className="object-contain"
-                sizes="100vw"
-                priority
-              />
-            </motion.div>
-
-            <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/70 text-sm tabular-nums">
-              {lightboxIndex + 1} / {currentPhotos.length}
-            </p>
-          </motion.div>
+          <LightboxModal
+            photos={currentPhotos}
+            index={lightboxIndex}
+            direction={slideDirection}
+            alt={activeProject?.name ?? activeAlbum?.name ?? "Gallery"}
+            onClose={closeLightbox}
+            onNext={nextPhoto}
+            onPrev={prevPhoto}
+            touchStartX={touchStartX}
+            touchStartY={touchStartY}
+          />
         )}
       </AnimatePresence>
 
