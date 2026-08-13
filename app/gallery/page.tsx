@@ -228,7 +228,7 @@ function LightboxModal({
               pinch={{ step: 5 }}
               panning={{ velocityDisabled: true }}
               onZoom={({ state }) => setIsZoomed(state.scale > 1.01)}
-              onTransformed={({ state }) => setIsZoomed(state.scale > 1.01)}
+              onTransform={({ state }) => setIsZoomed(state.scale > 1.01)}
             >
               <TransformComponent
                 wrapperStyle={{ width: "100%", height: "100%" }}
