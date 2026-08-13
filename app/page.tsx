@@ -8,7 +8,7 @@ import CTABanner from "@/components/CTABanner";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Scrape to Shape Renovations | GTA Home Renovation Experts",
+  title: "Scrape to Shape Renovations | Your Trusted Home Renovation Experts",
   description:
     "The GTA's most trusted home renovation company. Bathrooms, kitchens, basements, roofing, flooring, and landscaping. Free consultations, fixed-price quotes, written warranty.",
 };

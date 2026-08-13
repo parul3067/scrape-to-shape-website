@@ -4,7 +4,6 @@
 **Prepared for:** Scrape to Shape Renovations
 **Service Area:** Greater Toronto Area (GTA)
 **Phone:** 226-899-1190
-**Reference site:** [Jarvis Contracting](https://www.jarviscontracting.ca/)
 **Logo animation reference:** [Dream Construction Studio](https://dreamconstructionstudio.com/residential/)
 
 ---
@@ -133,7 +132,7 @@ The site must present all 7 services with equal visual weight. Each service has 
 
 ### 5.4 Process Page
 
-Modelled after Jarvis Contracting's process section — clear, reassuring, step-by-step.
+A clear, reassuring, step-by-step walkthrough of how the company works with clients.
 
 **Recommended steps:**
 
