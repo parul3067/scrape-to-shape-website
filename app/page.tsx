@@ -117,16 +117,25 @@ function FullServiceSection() {
           {SERVICE_CARDS.map((card, i) => (
             <ScrollReveal key={card.title} delay={i * 0.1}>
               <div className="flex flex-col rounded-3xl overflow-hidden bg-[#1A1A1A] h-full">
-                <div className="relative h-52 overflow-hidden shrink-0">
+                <Link
+                  href="/gallery"
+                  aria-label={`View ${card.title} projects in gallery`}
+                  className="group relative block h-52 overflow-hidden shrink-0 focus:outline-none focus:ring-2 focus:ring-[#C9A84C]"
+                >
                   <Image
                     src={card.image}
                     alt={card.title}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-black/20 to-transparent" />
-                </div>
+                  <div className="absolute inset-0 bg-[#1A1A1A]/0 group-hover:bg-[#1A1A1A]/40 transition-colors duration-300 flex items-center justify-center">
+                    <span className="opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-[#C9A84C] text-white font-semibold text-sm px-5 py-2.5 rounded-full">
+                      View Gallery →
+                    </span>
+                  </div>
+                </Link>
                 <div className="flex flex-col flex-1 p-7">
                   <h3 className="text-white font-bold text-xl mb-4">
                     {card.title}
