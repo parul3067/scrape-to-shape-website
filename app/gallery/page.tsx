@@ -57,7 +57,7 @@ const ALBUMS: Album[] = [
     slug: "bathroom",
     name: "Bathroom",
     photos: Array.from(
-      { length: 12 },
+      { length: 17 },
       (_, i) => `/gallery/bathroom/bathroom-${String(i + 1).padStart(2, "0")}.jpg`
     ),
   },
@@ -71,7 +71,14 @@ const ALBUMS: Album[] = [
   },
   { slug: "flooring", name: "Flooring", photos: [] },
   { slug: "tiling", name: "Tiling", photos: [] },
-  { slug: "plumbing", name: "Plumbing", photos: [] },
+  {
+    slug: "plumbing",
+    name: "Plumbing",
+    photos: Array.from(
+      { length: 9 },
+      (_, i) => `/gallery/plumbing/plumbing-${String(i + 1).padStart(2, "0")}.jpg`
+    ),
+  },
   {
     slug: "landscaping",
     name: "Landscaping",

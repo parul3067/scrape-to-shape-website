@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -185,15 +186,24 @@ export default function ServicesPage() {
               >
                 {/* Visual */}
                 <ScrollReveal delay={0} className="h-full">
-                  <div className="relative rounded-3xl overflow-hidden h-full min-h-64">
+                  <Link
+                    href="/gallery"
+                    aria-label={`View ${service.name} projects in gallery`}
+                    className="group relative block rounded-3xl overflow-hidden h-full min-h-64 focus:outline-none focus:ring-2 focus:ring-[#C9A84C]"
+                  >
                     <Image
                       src={service.image}
                       alt={service.name}
                       fill
-                      className="object-cover"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
                       sizes="(max-width: 1024px) 100vw, 50vw"
                     />
-                  </div>
+                    <div className="absolute inset-0 bg-[#1A1A1A]/0 group-hover:bg-[#1A1A1A]/30 transition-colors duration-300 flex items-center justify-center">
+                      <span className="opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-[#C9A84C] text-white font-semibold text-sm px-5 py-2.5 rounded-full">
+                        View Gallery →
+                      </span>
+                    </div>
+                  </Link>
                 </ScrollReveal>
 
                 {/* Content */}
