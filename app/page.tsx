@@ -217,12 +217,12 @@ function StorySection() {
 
           {/* Founder photo */}
           <ScrollReveal delay={0.1}>
-            <div className="relative rounded-2xl overflow-hidden h-[500px] lg:h-[620px]">
+            <div className="relative rounded-2xl overflow-hidden aspect-[3/4] lg:aspect-auto lg:h-[720px]">
               <Image
                 src="/founders.jpg"
                 alt="Parul Verma and Ash Bakshi, founders of Scrape to Shape Renovations"
                 fill
-                className="object-cover"
+                className="object-cover object-top"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
               />
