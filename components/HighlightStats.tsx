@@ -4,36 +4,37 @@ import { useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
 
 const STATS = [
-  { target: 10, suffix: "+", label: "Years of Experience" },
-  { target: 100, suffix: "+", label: "Projects Completed" },
+  { target: 10, suffix: "+", label: "Years of Experience", duration: 6000 },
+  { target: 100, suffix: "+", label: "Projects Completed", duration: 6000 },
 ];
 
 function BigCountTile({
   target,
   suffix,
   label,
+  duration,
 }: {
   target: number;
   suffix: string;
   label: string;
+  duration: number;
 }) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
 
   useEffect(() => {
     if (!inView) return;
-    const duration = 2000;
-    const steps = 60;
+    const steps = target;
     let step = 0;
     const timer = setInterval(() => {
       step++;
       const progress = 1 - Math.pow(1 - step / steps, 3);
-      setCount(Math.max(0, Math.round(progress * target)));
+      setCount(Math.max(1, Math.round(progress * target)));
       if (step >= steps) clearInterval(timer);
     }, duration / steps);
     return () => clearInterval(timer);
-  }, [inView, target]);
+  }, [inView, target, duration]);
 
   return (
     <div ref={ref} className="flex flex-col items-center text-center">
