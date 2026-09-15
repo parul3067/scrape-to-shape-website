@@ -46,6 +46,7 @@ const KITCHEN_PROJECTS: Project[] = [
   { slug: "tampa-cr-oshawa", name: "Tampa Cr, Oshawa", photos: kitchenPhotos("tampa-cr-oshawa", 2) },
   { slug: "tanasi-rd-brampton", name: "Tanasi Rd, Brampton", photos: kitchenPhotos("tanasi-rd-brampton", 5) },
   { slug: "toronto", name: "Toronto", photos: kitchenPhotos("toronto", 1) },
+  { slug: "viewmount-st-oshawa", name: "Viewmount St, Oshawa", photos: kitchenPhotos("viewmount-st-oshawa", 3) },
   { slug: "vodden-st-brampton", name: "Vodden St, Brampton", photos: kitchenPhotos("vodden-st-brampton", 4) },
   { slug: "zeller-dr-kitchener", name: "Zeller Dr, Kitchener", photos: kitchenPhotos("zeller-dr-kitchener", 3) },
   { slug: "other", name: "Other Projects", photos: kitchenPhotos("other", 12) },
